@@ -8,6 +8,8 @@ import Header from "./components/Header";
 import Peptides from "./pages/Peptides";
 import ForgetPass from "./components/ForgetPass";
 import Footer from "./components/Footer";
+import "react-phone-input-2/lib/style.css";
+
 function App() {
   return (
     <Router>

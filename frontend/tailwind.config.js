@@ -7,8 +7,8 @@ module.exports = {
         "custom-gradient": "linear-gradient(to right, #4f46e5, #ec4899)",
       },
       colors: {
-        primary: "#E7D293",
-        secondary: "#B78742",
+        primary: "#FF020E",
+        secondary: "#1155F0",
       },
     },
   },

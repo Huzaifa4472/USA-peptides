@@ -1,5 +1,11 @@
+import NewsLetter from "../components/NewsLetter";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <NewsLetter />
+    </div>
+  );
 };
 
 export default Home;

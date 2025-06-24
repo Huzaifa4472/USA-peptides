@@ -1,4 +1,4 @@
-import Logo from "../assets/core-logo.svg";
+import Logo from "../assets/core-logo.png";
 import { FaShoppingCart } from "react-icons/fa";
 import { useState } from "react";
 import { HiOutlineUser } from "react-icons/hi";
@@ -10,12 +10,13 @@ import { IoMdClose } from "react-icons/io";
 const Header = () => {
   const [count, setCount] = useState(2);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white sticky top-0 z-50">
       <div className="sm:w-[80%] w-[90%] mx-auto flex items-center justify-between py-6">
         <NavLink to="/">
-          <img src={Logo} alt="Logo" />
+          <img src={Logo} alt="Logo" className="w-44" />
         </NavLink>
 
         <div className="flex items-center gap-10">
@@ -24,8 +25,8 @@ const Header = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#9C6B2B]"
-                  : "hover:text-[#9C6B2B] transition-all duration-500 ease-in-out"
+                  ? "text-primary"
+                  : "hover:text-primary transition-all duration-500 ease-in-out"
               }
             >
               HOME
@@ -34,8 +35,8 @@ const Header = () => {
               to="/peptides"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#9C6B2B]"
-                  : "hover:text-[#9C6B2B] transition-all duration-500 ease-in-out"
+                  ? "text-primary"
+                  : "hover:text-primary transition-all duration-500 ease-in-out"
               }
             >
               PEPTIDES FOR SALE
@@ -44,8 +45,8 @@ const Header = () => {
               to="/about-us"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#9C6B2B]"
-                  : "hover:text-[#9C6B2B] transition-all duration-500 ease-in-out"
+                  ? "text-primary"
+                  : "hover:text-primary transition-all duration-500 ease-in-out"
               }
             >
               ABOUT US
@@ -54,8 +55,8 @@ const Header = () => {
               to="/contact"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#9C6B2B]"
-                  : "hover:text-[#9C6B2B] transition-all duration-500 ease-in-out"
+                  ? "text-primary"
+                  : "hover:text-primary transition-all duration-500 ease-in-out"
               }
             >
               CONTACT
@@ -67,10 +68,13 @@ const Header = () => {
             <NavLink to="/my-accounts">
               <HiOutlineUser className="lg:!flex hidden" />
             </NavLink>
-            <div className="relative">
+            <div
+              className="relative cursor-pointer"
+              onClick={() => setIsCartOpen(true)}
+            >
               <FaShoppingCart />
               {count > 0 && (
-                <span className="absolute -top-2 -right-2 bg-[#9C6B2B] text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                   {count}
                 </span>
               )}
@@ -86,7 +90,7 @@ const Header = () => {
         </div>
       </div>
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out border-t-2 border-[#9C6B2B] ${
+        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out border-t-2 border-primary ${
           menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         } bg-black px-6`}
       >
@@ -95,8 +99,8 @@ const Header = () => {
             to="/"
             className={({ isActive }) =>
               isActive
-                ? "text-[#9C6B2B]"
-                : "hover:text-[#9C6B2B] transition-all duration-500 ease-in-out"
+                ? "text-primary"
+                : "hover:text-primary transition-all duration-500 ease-in-out"
             }
             onClick={() => setMenuOpen(false)}
           >
@@ -106,8 +110,8 @@ const Header = () => {
             to="/peptides"
             className={({ isActive }) =>
               isActive
-                ? "text-[#9C6B2B]"
-                : "hover:text-[#9C6B2B] transition-all duration-500 ease-in-out"
+                ? "text-primary"
+                : "hover:text-primary transition-all duration-500 ease-in-out"
             }
             onClick={() => setMenuOpen(false)}
           >
@@ -117,8 +121,8 @@ const Header = () => {
             to="/about"
             className={({ isActive }) =>
               isActive
-                ? "text-[#9C6B2B]"
-                : "hover:text-[#9C6B2B] transition-all duration-500 ease-in-out"
+                ? "text-primary"
+                : "hover:text-primary transition-all duration-500 ease-in-out"
             }
             onClick={() => setMenuOpen(false)}
           >
@@ -128,8 +132,8 @@ const Header = () => {
             to="/contact"
             className={({ isActive }) =>
               isActive
-                ? "text-[#9C6B2B]"
-                : "hover:text-[#9C6B2B] transition-all duration-500 ease-in-out"
+                ? "text-primary"
+                : "hover:text-primary transition-all duration-500 ease-in-out"
             }
             onClick={() => setMenuOpen(false)}
           >
@@ -140,8 +144,8 @@ const Header = () => {
               to="/my-accounts"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#9C6B2B]"
-                  : "hover:text-[#9C6B2B] transition-all duration-500 ease-in-out"
+                  ? "text-primary"
+                  : "hover:text-primary transition-all duration-500 ease-in-out"
               }
               onClick={() => setMenuOpen(false)}
             >
@@ -150,18 +154,49 @@ const Header = () => {
             <NavLink
               to="/my-accounts"
               className={({ isActive }) =>
-                isActive ? "text-[#9C6B2B]" : "hover:text-[#9C6B2B]"
+                isActive ? "text-primary" : "hover:text-primary"
               }
               onClick={() => setMenuOpen(false)}
             >
-              <button className="border border-[#9C6B2B] text-[#9C6B2B] px-4 py-1 rounded-lg">
+              <button className="border border-primary text-primary px-4 py-1 rounded-lg">
                 LOGIN
               </button>
             </NavLink>
           </div>
-          {/* Icons on Mobile */}
-          <div className="flex items-center gap-4 mt-4"></div>
         </nav>
+      </div>
+      {/* Cart Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-full w-80 bg-white text-black shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+          isCartOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex justify-between items-center p-4 border-b">
+          <h2 className="text-lg font-semibold">Your Cart</h2>
+          <IoMdClose
+            className="text-2xl cursor-pointer"
+            onClick={() => setIsCartOpen(false)}
+          />
+        </div>
+
+        <div className="p-4 space-y-4">
+          {/* Example Cart Items - Replace with your actual cart items */}
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="font-medium">Product Name</p>
+              <p className="text-sm text-gray-600">Quantity: 1</p>
+            </div>
+            <p className="font-semibold">$25.00</p>
+          </div>
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="font-medium">Another Product</p>
+              <p className="text-sm text-gray-600">Quantity: 2</p>
+            </div>
+            <p className="font-semibold">$50.00</p>
+          </div>
+          {/* ... More Items */}
+        </div>
       </div>
     </div>
   );
