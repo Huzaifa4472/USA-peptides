@@ -9,6 +9,7 @@ import Peptides from "./pages/Peptides";
 import ForgetPass from "./components/ForgetPass";
 import Footer from "./components/Footer";
 import "react-phone-input-2/lib/style.css";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/peptides" element={<Peptides />} />
         <Route path="/my-accounts" element={<MyAccount />} />
         <Route path="/my-accounts/forget-password" element={<ForgetPass />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
     </Router>

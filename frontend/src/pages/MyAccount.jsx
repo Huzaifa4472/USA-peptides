@@ -6,7 +6,7 @@ const MyAccount = () => {
 
   return (
     <div className="flex flex-col items-center justify-center ">
-      <div className="flex flex-col w-[80%] gap-4 mt-14">
+      <div className="flex flex-col w-[80%] gap-4 my-14">
         <h1 className="text-gradient text-3xl font-bold">My account</h1>
         <div className="flex md:flex-row flex-col gap-10 mt-10">
           <div className="md:w-1/2 ">
