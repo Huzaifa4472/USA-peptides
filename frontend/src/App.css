@@ -11,3 +11,11 @@
 .btn-gradient {
   @apply bg-gradient-to-r from-primary to-secondary text-white transition-all duration-500 ease-in-out;
 }
+@media (min-width: 1024px) {
+  .lg-peptides-bg {
+    background-image: url("../src/assets/home-peptides.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

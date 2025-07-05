@@ -1,14 +1,16 @@
 import React from "react";
-import Background from "../assets/about-bg.png";
+import Background from "../assets/about-bg.jpg";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="flex flex-col items-start gap-14 mb-20">
-      <div className="flex items-center w-[100%] ">
-        <h1 className=" text-gradient text-5xl font-bold w-[40%] text-center">
-          ​PRIVACY POLICY
+    <div className="flex flex-col items-end gap-14 mb-20">
+      <div
+        className="flex items-center justify-center w-full min-h-[300px] bg-cover bg-center "
+        style={{ backgroundImage: `url(${Background})` }}
+      >
+        <h1 className=" md:mt-8 mt-4 sm:w-[80%] w-[90%] text-gradient md:text-[60px] text-[32px] leading-none font-[700]  ">
+          PRIVACY POLICY
         </h1>
-        <img src={Background} className="w-[60%] " />
       </div>
       <div className="flex  items-center justify-center w-[100%]">
         <div className="flex flex-col gap-8 items-start w-[90%] text-[#666]">

@@ -1,27 +1,27 @@
 import React from "react";
-const herobg = require("../assets/home-bg.jpeg");
+const herobg = require("../assets/herobg.jpeg");
 const heropd = require("../assets/hero-product.webp");
 
 const HeroSection = () => {
   return (
     <div
-      className="w-full h-[70vh] flex items-start justify-center py-10 bg-cover bg-center "
+      className="w-full xl:h-[90vh] flex items-start justify-center py-10 bg-cover bg-center "
       style={{ backgroundImage: `url(${herobg})` }}
     >
-      <div className="w-[80%] flex ">
-        <div className="w-1/2 flex flex-col items-start justify-center gap-10 mb-8">
-          <h1 className="text-gradient text-5xl font-bold">
-            Highest Quality Peptides For Sale
+      <div className="md:w-[80%] w-[90%] flex lg:flex-row flex-col xl:gap-8 lg:gap-0 gap-4">
+        <div className="lg:w-1/2  flex flex-col items-start justify-center gap-4 mb-8">
+          <h1 className="text-gradient sm:text-[42px] text-[36px] leading-snug font-bold">
+            HIGHEST QUALITY PEPTIDES FOR SALE
           </h1>
-          <p className="text-white text-lg leading-7 ">
+          <p className="text-white text-[16px] leading-7 ">
             We are proud to carry the highest quality peptides and peptide
             blends in the research industry.
           </p>
-          <button className="btn-gradient py-3 px-8 rounded-2xl">
+          <button className="text-secondary bg-transparent border border-secondary hover:text-white hover:bg-secondary py-1.5 px-5 sm:text-[20px] text-[18px] rounded-2xl">
             BUY PEPTIDES
           </button>
         </div>
-        <div className="w-1/2">
+        <div className="lg:w-1/2">
           <img src={heropd} />
         </div>
       </div>

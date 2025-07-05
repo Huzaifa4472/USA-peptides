@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <div className="bg-black text-white sticky top-0 z-50">
-      <div className="sm:w-[80%] w-[90%] mx-auto flex items-center justify-between py-6">
+      <div className="md:w-[80%] w-[90%] mx-auto flex items-center justify-between py-6">
         <NavLink to="/">
           <img src={Logo} alt="Logo" className="w-44" />
         </NavLink>
@@ -25,8 +25,8 @@ const Header = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "text-primary"
-                  : "hover:text-primary transition-all duration-500 ease-in-out"
+                  ? "text-primary text-[14px]"
+                  : "hover:text-primary transition-all duration-500 ease-in-out text-[14px]"
               }
             >
               HOME
@@ -35,8 +35,8 @@ const Header = () => {
               to="/peptides"
               className={({ isActive }) =>
                 isActive
-                  ? "text-primary"
-                  : "hover:text-primary transition-all duration-500 ease-in-out"
+                  ? "text-primary text-[14px]"
+                  : "hover:text-primary transition-all duration-500 ease-in-out text-[14px]"
               }
             >
               PEPTIDES FOR SALE
@@ -45,8 +45,8 @@ const Header = () => {
               to="/about-us"
               className={({ isActive }) =>
                 isActive
-                  ? "text-primary"
-                  : "hover:text-primary transition-all duration-500 ease-in-out"
+                  ? "text-primary text-[14px]"
+                  : "hover:text-primary transition-all duration-500 ease-in-out text-[14px]"
               }
             >
               ABOUT US
@@ -55,8 +55,8 @@ const Header = () => {
               to="/contact"
               className={({ isActive }) =>
                 isActive
-                  ? "text-primary"
-                  : "hover:text-primary transition-all duration-500 ease-in-out"
+                  ? "text-primary text-[14px]"
+                  : "hover:text-primary transition-all duration-500 ease-in-out text-[14px]"
               }
             >
               CONTACT
@@ -99,8 +99,8 @@ const Header = () => {
             to="/"
             className={({ isActive }) =>
               isActive
-                ? "text-primary"
-                : "hover:text-primary transition-all duration-500 ease-in-out"
+                ? "text-primary text-[14px]"
+                : "hover:text-primary transition-all duration-500 ease-in-out text-[14px]"
             }
             onClick={() => setMenuOpen(false)}
           >
@@ -110,19 +110,19 @@ const Header = () => {
             to="/peptides"
             className={({ isActive }) =>
               isActive
-                ? "text-primary"
-                : "hover:text-primary transition-all duration-500 ease-in-out"
+                ? "text-primary text-[14px]"
+                : "hover:text-primary transition-all duration-500 ease-in-out text-[14px]"
             }
             onClick={() => setMenuOpen(false)}
           >
             PEPTIDES FOR SALE
           </NavLink>
           <NavLink
-            to="/about"
+            to="/about-us"
             className={({ isActive }) =>
               isActive
-                ? "text-primary"
-                : "hover:text-primary transition-all duration-500 ease-in-out"
+                ? "text-primary text-[14px]"
+                : "hover:text-primary transition-all duration-500 ease-in-out text-[14px]"
             }
             onClick={() => setMenuOpen(false)}
           >
@@ -132,8 +132,8 @@ const Header = () => {
             to="/contact"
             className={({ isActive }) =>
               isActive
-                ? "text-primary"
-                : "hover:text-primary transition-all duration-500 ease-in-out"
+                ? "text-primary text-[14px]"
+                : "hover:text-primary transition-all duration-500 ease-in-out text-[14px]"
             }
             onClick={() => setMenuOpen(false)}
           >
@@ -144,8 +144,8 @@ const Header = () => {
               to="/my-accounts"
               className={({ isActive }) =>
                 isActive
-                  ? "text-primary"
-                  : "hover:text-primary transition-all duration-500 ease-in-out"
+                  ? "text-primary text-[14px]"
+                  : "hover:text-primary transition-all duration-500 ease-in-out text-[14px]"
               }
               onClick={() => setMenuOpen(false)}
             >
@@ -154,7 +154,7 @@ const Header = () => {
             <NavLink
               to="/my-accounts"
               className={({ isActive }) =>
-                isActive ? "text-primary" : "hover:text-primary"
+                isActive ? "text-primary text-[14px]" : "hover:text-primary"
               }
               onClick={() => setMenuOpen(false)}
             >
