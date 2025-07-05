@@ -10,7 +10,7 @@ const MyAccount = () => {
         <h1 className="text-gradient text-3xl font-bold">My account</h1>
         <div className="flex md:flex-row flex-col gap-10 mt-10">
           <div className="md:w-1/2 ">
-            <h1 className="text-2xl font-semibold">Login</h1>
+            <h1 className="text-[26px] font-[700]">Login</h1>
             <form className="flex flex-col gap-3 mt-4 p-5 border rounded-xl">
               <div className="flex flex-col gap-2">
                 <label className="text-sm">
@@ -63,7 +63,7 @@ const MyAccount = () => {
             </form>
           </div>
           <div className="md:w-1/2">
-            <h1 className="text-2xl font-semibold">Register</h1>
+            <h1 className="text-[26px] font-[700]">Register</h1>
             <form className="flex flex-col gap-4 mt-4 p-6 border rounded-xl">
               <div className="flex flex-col gap-2">
                 <label className="text-sm">

@@ -11,8 +11,9 @@ const Contact = () => {
             Get in touch with us.
           </h1>
           <p className="text-white text-[15px]">
-            You can email us directly at <span>support@corepeptides.com</span>{" "}
-            or fill out the form below.
+            You can email us directly at{" "}
+            <span className="text-[#dd78ab]">support@corepeptides.com</span> or
+            fill out the form below.
           </p>
           <form>
             <div className="flex flex-col gap-4 text-white">

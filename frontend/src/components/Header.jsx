@@ -14,9 +14,9 @@ const Header = () => {
 
   return (
     <div className="bg-black text-white sticky top-0 z-50">
-      <div className="md:w-[80%] w-[90%] mx-auto flex items-center justify-between py-6">
+      <div className="md:w-[80%] w-[90%] mx-auto flex items-center justify-between md:py-5 py-4">
         <NavLink to="/">
-          <img src={Logo} alt="Logo" className="w-44" />
+          <img src={Logo} alt="Logo" className="md:w-44 w-36" />
         </NavLink>
 
         <div className="flex items-center gap-10">
