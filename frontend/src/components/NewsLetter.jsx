@@ -14,46 +14,46 @@ const NewsLetter = () => {
         alt="Newsletter Background"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="relative z-10 flex flex-col items-center justify-center h-[100vh] text-white px-4">
-        <div className="w-[90%] md:w-[50%] bg-black bg-opacity-80 py-10 px-10 flex flex-col gap-6 items-center justify-center rounded-lg">
+      <div className="relative z-10 flex flex-col items-center justify-center h-[130vh] text-white px-4">
+        <div className="w-[90%] md:w-[50%] bg-black bg-opacity-80 py-12 px-10  flex flex-col gap-6 items-center justify-center rounded-lg">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl md:text-4xl font-semibold">
-              Subscribe to our Newsletter
+            <h2 className="md:text-[26px] font-[600]">
+              SUBSCRIBE TO OUR NEWSLETTER
             </h2>
             <p className="font-medium text-blue-300">
               ENJOY PROMOTIONS AND DISCOUNTS
             </p>
           </div>
-          <form className="w-full space-y-4">
+          <form className="w-full flex flex-col gap-4 space-y-4">
             <input
               type="text"
               placeholder="First Name"
-              className="w-full px-4 py-2 rounded bg-transparent border border-blue-300 text-blue-300 focus:outline-none"
+              className="w-full px-4 py-4 rounded-full  bg-transparent border border-blue-300 text-blue-300 focus:outline-none"
             />
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-4 py-2 rounded bg-transparent border border-blue-300 text-blue-300 focus:outline-none"
+              className="w-full px-4 py-4 rounded-full bg-transparent border border-blue-300 text-blue-300 focus:outline-none"
             />
-            <div className="flex items-center w-full px-2 py-1 border border-blue-300 rounded bg-transparent text-blue-300 focus-within:ring-2 focus:outline-none">
+            <div className="flex items-center w-full px-2 py-4 rounded-full border border-blue-300  bg-transparent text-blue-300 focus-within:ring-2 focus:outline-none">
               <PhoneInput
                 placeholder="Enter phone number"
                 international
                 defaultCountry="US"
                 value={phone}
                 onChange={setPhone}
-                className="flex-1 py-1 [&>input]:bg-transparent [&>input]:text-blue-300 [&>input]:placeholder:text-blue-300 [&>input]:outline-none [&>input]:ring-0 focus:[&>input]:outline-none focus:[&>input]:ring-0"
+                className="flex-1 [&>input]:bg-transparent [&>input]:text-blue-300 [&>input]:placeholder:text-blue-300 [&>input]:outline-none [&>input]:ring-0 focus:[&>input]:outline-none focus:[&>input]:ring-0"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-secondary hover:bg-transparent hover:text-secondary border border-secondary text-white py-2 rounded font-semibold transition-all duration-500 ease-in-out"
+              className="w-full bg-secondary hover:bg-transparent hover:text-secondary border border-secondary text-white py-4 rounded-full font-semibold transition-all duration-500 ease-in-out"
             >
-              Subscribe
+              SUBSCRIBE
             </button>
-            <label className="flex items-center  gap-2">
-              <input type="checkbox" className="accent-blue-300" />
+            <label className="flex items-center font-[700] text-[16px] gap-2">
+              <input type="checkbox" className="accent-blue-400" />
               Text me with offers and updates
             </label>
             <div className=" text-blue-300 flex items-center justify-between gap-2">
