@@ -5,17 +5,19 @@ const PrivacyPolicy = () => {
   return (
     <div className="flex flex-col items-end gap-14 mb-20">
       <div
-        className="flex items-center justify-center w-full min-h-[300px] bg-cover bg-center "
+        className="flex items-center justify-center w-full min-h-[280px] bg-cover bg-center "
         style={{ backgroundImage: `url(${Background})` }}
       >
-        <h1 className=" md:mt-8 mt-4 sm:w-[80%] w-[90%] text-gradient md:text-[60px] text-[32px] leading-none font-[700]  ">
+        <h1 className=" md:mt-8 mt-4 w-[90%] text-gradient md:text-[60px] text-[32px] leading-tight font-[700]">
           PRIVACY POLICY
         </h1>
       </div>
-      <div className="flex  items-center justify-center w-[100%]">
-        <div className="flex flex-col gap-8 items-start w-[90%] text-[#666]">
-          <div className="flex flex-col gap-5">
-            <div>www.corepeptides.com – Last updated: June 10, 2025</div>
+      <div className="flex  items-center justify-center w-[100%] text-[15px] leading-[26px] font-[500]">
+        <div className="flex flex-col gap-6 items-start md:w-[80%] w-[90%] text-[#666]">
+          <div className="flex flex-col gap-5 ">
+            <div className="">
+              www.corepeptides.com – Last updated: June 10, 2025
+            </div>
             <p>
               This Privacy Policy describes Our policies and procedures on the
               collection, use and disclosure of Your information when You use
@@ -30,11 +32,13 @@ const PrivacyPolicy = () => {
               Generator.
             </p>
           </div>
-          <h1 className="text-3xl font-semibold">
+          <h1 className="md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
             Interpretation and Definitions
           </h1>
           <div className="flex flex-col gap-5">
-            <h3 className="text-xl font-semibold">Interpretation</h3>
+            <h3 className="md:text-[22px] text-[20px] font-[700]  text-[#333]">
+              Interpretation
+            </h3>
             <p>
               The words of which the initial letter is capitalized have meanings
               defined under the following conditions.
@@ -45,7 +49,9 @@ const PrivacyPolicy = () => {
             </p>
           </div>
           <div className="flex flex-col gap-5">
-            <h3 className="text-xl font-semibold">Definitions</h3>
+            <h3 className="md:text-[22px] text-[20px] font-[700]  text-[#333]">
+              Definitions
+            </h3>
             <span>For the purposes of this Privacy Policy:</span>
             <ul className="decoration-dotted list-disc pl-5 flex flex-col gap-4">
               <li>
@@ -123,12 +129,16 @@ const PrivacyPolicy = () => {
               </li>
             </ul>
           </div>
-          <h1 className="text-3xl font-semibold">
+          <h1 className="md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
             Collecting and Using Your Personal Data
           </h1>
-          <div className="flex flex-col gap-5">
-            <h3 className="text-xl font-semibold">Types of Data Collected</h3>
-            <h3 className="text-lg font-semibold">Personal Data</h3>
+          <div className="flex flex-col gap-4">
+            <h3 className="md:text-[22px] text-[20px] font-[700]  text-[#333]">
+              Types of Data Collected
+            </h3>
+            <h3 className="text-[18px] font-[700]  text-[#333]">
+              Personal Data
+            </h3>
 
             <p>
               While using Our Service, We may ask You to provide Us with certain
@@ -145,7 +155,7 @@ const PrivacyPolicy = () => {
             </ul>
           </div>
           <div className="flex flex-col gap-5">
-            <h3 className="text-xl font-semibold">Usage Data</h3>
+            <h3 className="text-[18px] font-[700]  text-[#333]">Usage Data</h3>
             <p>Usage Data is collected automatically when using the Service.</p>
             <p>
               Usage Data may include information such as Your Device’s Internet
@@ -169,7 +179,7 @@ const PrivacyPolicy = () => {
             </p>
           </div>
           <div className="flex flex-col gap-5">
-            <h3 className="text-xl font-semibold">
+            <h3 className="text-[18px] font-[700]  text-[#333]">
               Tracking Technologies and Cookies
             </h3>
             <p>
@@ -235,7 +245,9 @@ const PrivacyPolicy = () => {
               </li>
             </ul>
           </div>
-          <h1 className="text-3xl font-semibold">Use of Your Personal Data</h1>
+          <h1 className="md:text-[22px] text-[20px] font-[700]  text-[#333]">
+            Use of Your Personal Data
+          </h1>
           <p>The Company may use Personal Data for the following purposes:</p>
           <ul className="decoration-dotted list-disc pl-5 flex flex-col gap-4">
             <li>
@@ -320,7 +332,7 @@ const PrivacyPolicy = () => {
               activity, communicate with You and view Your profile.
             </li>
           </ul>
-          <h3 className="text-xl font-semibold">
+          <h3 className="md:text-[22px] text-[20px] font-[700]  text-[#333]">
             Retention of Your Personal Data
           </h3>
           <p>
@@ -338,7 +350,7 @@ const PrivacyPolicy = () => {
             improve the functionality of Our Service, or We are legally
             obligated to retain this data for longer time periods.
           </p>
-          <h3 className="text-xl font-semibold">
+          <h3 className="md:text-[22px] text-[20px] font-[700]  text-[#333]">
             Transfer of Your Personal Data
           </h3>
           <p>
@@ -362,11 +374,13 @@ const PrivacyPolicy = () => {
             place including the security of Your data and other personal
             information.
           </p>
-          <h3 className="text-xl font-semibold">
+          <h3 className="md:text-[22px] text-[20px] font-[700]  text-[#333]">
             Disclosure of Your Personal Data
           </h3>
-          <div className="flex flex-col gap-5">
-            <h3 className="text-xl font-semibold">Business Transactions</h3>
+          <div className="flex flex-col gap-3">
+            <h3 className="text-[18px] font-[700]  text-[#333]">
+              Business Transactions
+            </h3>
             <p>
               If the Company is involved in a merger, acquisition or asset sale,
               Your Personal Data may be transferred. We will provide notice
@@ -375,7 +389,9 @@ const PrivacyPolicy = () => {
             </p>
           </div>
           <div className="flex flex-col gap-5">
-            <h3 className="text-xl font-semibold">Law enforcement</h3>
+            <h3 className="text-[18px] font-[700]  text-[#333]">
+              Law enforcement
+            </h3>
             <p>
               Under certain circumstances, the Company may be required to
               disclose Your Personal Data if required to do so by law or in
@@ -384,12 +400,14 @@ const PrivacyPolicy = () => {
             </p>
           </div>
           <div className="flex flex-col gap-5">
-            <h3 className="text-xl font-semibold">Other legal requirements</h3>
+            <h3 className="text-[18px] font-[700]  text-[#333]">
+              Other legal requirements
+            </h3>
             <p>
               The Company may disclose Your Personal Data in the good faith
               belief that such action is necessary to:
             </p>
-            <ul className="decoration-dotted list-disc pl-5 flex flex-col gap-4">
+            <ul className="decoration-dotted list-disc pl-5 flex flex-col gap-2">
               <li>Comply with a legal obligation</li>
               <li>Protect and defend the rights or property of the Company</li>
               <li>
@@ -403,7 +421,7 @@ const PrivacyPolicy = () => {
               <li>Protect against legal liability</li>
             </ul>
           </div>
-          <h1 className="text-3xl font-semibold">
+          <h1 className="md:text-[22px] text-[20px] font-[700]  text-[#333]">
             Security of Your Personal Data
           </h1>
           <p>
@@ -411,14 +429,9 @@ const PrivacyPolicy = () => {
             that no method of transmission over the Internet, or method of
             electronic storage is 100% secure. While We strive to use
             commercially acceptable means to protect Your Personal Data, We
-            cannot guarantee its absolute security. We will take all steps
-            reasonably necessary to ensure that Your data is treated securely
-            and in accordance with this Privacy Policy and no transfer of Your
-            Personal Data will take place to an organization or a country unless
-            there are adequate controls in place including the security of Your
-            data and other personal information.
+            cannot guarantee its absolute security.
           </p>
-          <h1 className="text-3xl font-semibold">
+          <h1 className="md:text-[28px] text-[22px] font-[700]  text-[#333]">
             Detailed Information on the Processing of Your Personal Data
           </h1>
           <p>
@@ -426,7 +439,18 @@ const PrivacyPolicy = () => {
             their tasks on Our behalf and are obligated not to disclose or use
             it for any other purpose.
           </p>
-          <h3 className="text-xl font-semibold">Analytics</h3>
+          <h3 className="md:text-[22px] text-[20px] font-[700]  text-[#333]">
+            Marketing
+          </h3>
+          <p>
+            You may opt-in for marketing communications on our website. These
+            include emails and SMS messaging, which you can opt-out of at any
+            time. No purchase is necessary. Standard message and data rates may
+            apply.
+          </p>
+          <h3 className="md:text-[22px] text-[20px] font-[700]  text-[#333]">
+            Analytics
+          </h3>
           <p>
             We may use third-party Service providers to monitor and analyze the
             use of our Service.
@@ -437,14 +461,16 @@ const PrivacyPolicy = () => {
               Analytics service is provided by Google.
             </li>
           </ul>
-          <h1 className="text-2xl font-semibold">
+          <h1 className="md:text-[22px] text-[20px] font-[700]  text-[#333]">
             Usage, Performance and Miscellaneous
           </h1>
           <p>
             We may use third-party Service Providers to provide better
             improvement of our Service.
           </p>
-          <h1 className="text-2xl font-semibold">Links to Other Websites</h1>
+          <h1 className="md:text-[28px] text-[22px] font-[700]  text-[#333]">
+            Links to Other Websites
+          </h1>
           <p>
             Our Service may contain links to other websites that are not
             operated by Us. If You click on a third party link, You will be
@@ -456,7 +482,7 @@ const PrivacyPolicy = () => {
             content, privacy policies or practices of any third party sites or
             services.
           </p>
-          <h1 className="text-3xl font-semibold">
+          <h1 className="md:text-[28px] text-[22px] font-[700]  text-[#333]">
             Changes to this Privacy Policy
           </h1>
           <p>
@@ -473,7 +499,9 @@ const PrivacyPolicy = () => {
             changes. Changes to this Privacy Policy are effective when they are
             posted on this page.
           </p>
-          <h1 className="text-3xl font-semibold">Contact Us</h1>
+          <h1 className="md:text-[28px] text-[22px] font-[700]  text-[#333]">
+            Contact Us
+          </h1>
           <p>
             If you have any questions about this Privacy Policy, You can contact
             us:
@@ -482,184 +510,231 @@ const PrivacyPolicy = () => {
             <li>By email: </li>
             <li>
               or by visiting our{" "}
-              <a
-                href="/contact-page"
-                className="text-[#cc3882] font-medium hover:underline"
-              >
+              <a href="/contact" className="text-[#cc3882] font-medium ">
                 Contact Page{" "}
               </a>
             </li>
           </ul>
           <div className="flex flex-col gap-6 items-center justify-center w-full">
-            <h1 className="text-4xl font-semibold text-[#7a7a7a]">
+            <h1 className="md:text-[28px] text-[22px] font-[700]  text-[#333]">
               Cookies we collect
             </h1>
             <div className="border-2 border-[#7a7a7a] w-[100%]">
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">COOKIE name </div>
-                <div className="w-2/3 border-b pb-2 font-semibold">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 text-[15px] font-[600]  text-[#555]">
+                  COOKIE name{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 text-[15px] font-[600] border-b pb-2 text-[#555]">
                   COOKIE Description
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">CART</div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  CART
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   The association with your shopping cart.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">CATEGORY_INFO </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  CATEGORY_INFO{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   Stores the category info on the page, that allows to display
                   pages more quickly.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">COMPARE </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  COMPARE{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   The items that you have in the Compare Products list.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">CURRENCY </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  CURRENCY{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   Your preferred currency
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">CUSTOMER </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  CUSTOMER{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   An encrypted version of your customer id with the store.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">CUSTOMER_AUTH</div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  CUSTOMER_AUTH
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   An indicator if you are currently logged into the store.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">CUSTOMER_INFO </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  CUSTOMER_INFO{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   An encrypted version of the customer group you belong to.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">CUSTOMER_SEGMENT_IDS </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  CUSTOMER_SEGMENT_IDS{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   Stores the Customer Segment ID
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">EXTERNAL_NO_CACHE </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  EXTERNAL_NO_CACHE{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   A flag, which indicates whether caching is disabled or not.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">FRONTEND</div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  FRONTEND
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   You sesssion ID on the server.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">GUEST-VIEW </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  GUEST-VIEW{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   Allows guests to edit their orders.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">LAST_CATEGORY </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  LAST_CATEGORY{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   The last category you visited.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">LAST_PRODUCT </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  LAST_PRODUCT{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   The most recent product you have viewed.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">NEWMESSAGE </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  NEWMESSAGE{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   Indicates whether a new message has been received.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">NO_CACHE</div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  NO_CACHE
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   Indicates whether it is allowed to use cache.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
                   PERSISTENT_SHOPPING_CART{" "}
                 </div>
-                <div className="w-2/3 border-b pb-2">
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   A link to information about your cart and viewing history if
                   you have asked the site.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">POLL</div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  POLL
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   The ID of any polls you have recently voted in.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">POLL</div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  POLL
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   The ID of any polls you have recently voted in.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">POLLN </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  POLLN{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   Information on what polls you have voted on.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">RECENTLYCOMPARED </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  RECENTLYCOMPARED{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   The items that you have recently compared.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">STF</div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  STF
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   Information on products you have emailed to friends.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">STORE</div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  STORE
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   The store view or language you have selected.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
                   USER_ALLOWED_SAVE_COOKIE
                 </div>
-                <div className="w-2/3 border-b pb-2">
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   Indicates whether a customer allowed to use cookies.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">VIEWED_PRODUCT_IDS</div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  VIEWED_PRODUCT_IDS
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   The products that you have recently viewed.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">WISHLIST</div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  WISHLIST
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   An encrypted list of products added to your Wishlist.
                 </div>
               </div>
-              <div className="flex items-center justify-between  p-4">
-                <div className="w-1/3 font-semibold">WISHLIST_CNT </div>
-                <div className="w-2/3 border-b pb-2">
+              <div className="flex items-center justify-between md:gap-4 gap-8 p-4">
+                <div className="md:w-1/3 w-1/2 font-semibold break-words">
+                  WISHLIST_CNT{" "}
+                </div>
+                <div className="md:w-2/3 w-1/2 border-b pb-2 text-start">
                   The number of items in your Wishlist.
                 </div>
               </div>

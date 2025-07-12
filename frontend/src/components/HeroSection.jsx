@@ -10,7 +10,7 @@ const HeroSection = () => {
     >
       <div className="md:w-[80%] w-[90%] flex lg:flex-row flex-col xl:gap-8 lg:gap-0 gap-4">
         <div className="lg:w-1/2  flex flex-col items-start justify-center gap-4 mb-8">
-          <h1 className="text-gradient sm:text-[42px] text-[36px] leading-snug font-bold">
+          <h1 className="text-gradient text-[42px]  leading-tight font-bold">
             HIGHEST QUALITY PEPTIDES FOR SALE
           </h1>
           <p className="text-white text-[16px] leading-7 ">
@@ -21,8 +21,8 @@ const HeroSection = () => {
             BUY PEPTIDES
           </button>
         </div>
-        <div className="lg:w-1/2">
-          <img src={heropd} />
+        <div className="lg:w-1/2 flex items-center justify-center  ">
+          <img src={heropd} alt="product" className="lg:mt-14" />
         </div>
       </div>
     </div>

@@ -137,7 +137,7 @@ const Header = () => {
             }
             onClick={() => setMenuOpen(false)}
           >
-            Contact
+            CONTACT
           </NavLink>
           <div className="flex items-center justify-between">
             <NavLink
@@ -149,7 +149,7 @@ const Header = () => {
               }
               onClick={() => setMenuOpen(false)}
             >
-              My Account
+              MY ACCOUNT
             </NavLink>
             <NavLink
               to="/my-accounts"

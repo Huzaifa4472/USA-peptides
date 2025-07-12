@@ -14,21 +14,21 @@ const NewsLetter = () => {
         alt="Newsletter Background"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="relative z-10 flex flex-col items-center justify-center h-[130vh] text-white px-4">
-        <div className="w-[90%] md:w-[50%] bg-black bg-opacity-80 py-12 px-10  flex flex-col gap-6 items-center justify-center rounded-lg">
+      <div className="relative z-10 flex flex-col items-center justify-center h-[130vh] text-white md:px-4 px-2">
+        <div className="w-[90%] md:w-[50%] bg-black bg-opacity-80 py-12 md:px-10 sm:px-6 px-4  flex flex-col gap-6 items-center justify-center rounded-lg">
           <div className="text-center space-y-2">
-            <h2 className="md:text-[26px] font-[600]">
+            <h2 className="md:text-[26px] text-[16px] font-[600]">
               SUBSCRIBE TO OUR NEWSLETTER
             </h2>
             <p className="font-medium text-blue-300">
               ENJOY PROMOTIONS AND DISCOUNTS
             </p>
           </div>
-          <form className="w-full flex flex-col gap-4 space-y-4">
+          <form className="w-full flex flex-col md:gap-3 sm:gap-1 gap-0 space-y-4">
             <input
               type="text"
               placeholder="First Name"
-              className="w-full px-4 py-4 rounded-full  bg-transparent border border-blue-300 text-blue-300 focus:outline-none"
+              className="w-full md:px-4 px-3 py-4 rounded-full  bg-transparent border border-blue-300 text-blue-300 focus:outline-none"
             />
             <input
               type="email"

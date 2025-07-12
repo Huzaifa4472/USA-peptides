@@ -46,19 +46,19 @@ const Footer = () => {
                 About Us
               </NavLink>
               <NavLink
-                to="/contact"
+                to="/shipping"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Shipping, Returns & Refunds
               </NavLink>
               <NavLink
-                to="/contact"
+                to="/privacy-policy"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Privacy Policy
               </NavLink>
               <NavLink
-                to="/contact"
+                to="/terms-condition"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Terms and Conditions
@@ -76,7 +76,7 @@ const Footer = () => {
               Now Accepting
             </div>
             <div className="mt-6">
-              <img src={Payment} />
+              <img src={Payment} alt="Payment" />
             </div>
           </div>
         </div>
