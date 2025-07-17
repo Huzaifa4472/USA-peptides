@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
         <div className="flex flex-col gap-6 items-start md:w-[80%] w-[90%] text-[#666]">
           <div className="flex flex-col gap-5 ">
             <div className="">
-              www.corepeptides.com – Last updated: June 10, 2025
+              www.usapeptideslab.com – Last updated: June 10, 2025
             </div>
             <p>
               This Privacy Policy describes Our policies and procedures on the
@@ -63,7 +63,7 @@ const PrivacyPolicy = () => {
               <li>
                 <span className="font-bold">Company</span> (referred to as
                 either “the Company”, “We”, “Us” or “Our” in this Agreement)
-                refers to Core Peptides, based in Florida, USA.
+                refers to USA Peptides Lab, based in Florida, USA.
               </li>
               <li>
                 <span className="font-bold">Affiliate</span> means an entity
@@ -79,7 +79,7 @@ const PrivacyPolicy = () => {
               </li>
               <li>
                 <span className="font-bold">Website</span> refers to Core
-                Peptides, accessible from https://www.corepeptides.com
+                Peptides, accessible from https://www.usapeptideslab.com
               </li>
               <li>
                 <span className="font-bold">Service</span> refers to the

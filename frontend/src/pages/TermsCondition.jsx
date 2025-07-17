@@ -19,11 +19,11 @@ const TermsCondition = () => {
               INTRODUCTION
             </h3>
             <p>
-              By using this website, www.corepeptides.com, you (“User”) hereby
+              By using this website, www.usapeptideslab.com, you (“User”) hereby
               acknowledges and agrees that by accessing or using the website
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               (the “Website”), User is deemed to have read and accepted the
               following terms and conditions (the “Agreement”), which are
@@ -45,7 +45,7 @@ const TermsCondition = () => {
               By accessing or using the Website{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               User hereby acknowledges and agrees that your use of the Website
               excludes any and all rights to distribute, license, modify,
@@ -61,7 +61,7 @@ const TermsCondition = () => {
               written consent of{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>
               .
             </p>
@@ -71,7 +71,7 @@ const TermsCondition = () => {
               intellectual property rights or other rights of{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>
               , and may result in civil or criminal penalties.
             </p>
@@ -100,7 +100,7 @@ const TermsCondition = () => {
                 <span className="font-bold">NO WARRANTY.</span>{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 makes no warranty, representation, or guarantee regarding the
                 products or information contained herein. User acknowledges and
@@ -124,7 +124,7 @@ const TermsCondition = () => {
                 <span className="font-bold">NO REPRESENTATIONS.</span>
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 makes no representations at all about the information provided
                 on the Website. Any information contained in the Website is for
@@ -136,7 +136,7 @@ const TermsCondition = () => {
                 User understands and agrees that any product sold by
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 is not to be used, consumed, ingested, or otherwise by any
                 human. These products are not for animal or human consumption of
@@ -146,13 +146,13 @@ const TermsCondition = () => {
                 <span className="font-bold">CHANGES TO INFORMATION.</span>{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 may change any information contained on the Website at any time
                 without notice.{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 shall not be liable for any errors in descriptions, information,
                 omissions therein, or otherwise.
@@ -161,7 +161,7 @@ const TermsCondition = () => {
                 <span className="font-bold">PRICING</span>{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 reserves the right to change its pricing at any time without
                 notice.
@@ -170,7 +170,7 @@ const TermsCondition = () => {
                 <span className="font-bold">REFUSAL OF SERVICE.</span>{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 reserves the right to refuse service or sale to anyone, for any
                 reason.
@@ -180,22 +180,22 @@ const TermsCondition = () => {
                 any product from{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 or by using any product sold by{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 , and in consideration of approving the sale of any product from
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 , User agrees to hold{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 harmless from any and all claims arising under a theory of
                 contract, strict liability, negligence, or other breach of duty,
@@ -203,7 +203,7 @@ const TermsCondition = () => {
                 product sold by{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 .
               </li>
@@ -212,7 +212,7 @@ const TermsCondition = () => {
                 use and purchase from{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 , you must be 18 years of age or older.
               </li>
@@ -221,14 +221,14 @@ const TermsCondition = () => {
                 All products available for purchase on{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 are intended for laboratory research purposes only and are not
                 intended for animal or human consumption. By using this Website,
                 you understand and agree that none of the products for sale on
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 are intended to diagnose, treat, cure, or prevent disease, and
                 that no claim or warranty is made to that effect. You further
@@ -239,7 +239,7 @@ const TermsCondition = () => {
                 additives, or products. The only use of any product sold on{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 is for laboratory research only, and are to be handled by
                 licensed or qualified professionals only, in the appropriate
@@ -250,7 +250,7 @@ const TermsCondition = () => {
                 All sales on{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 are final and we do not accept any returns.
               </li>
@@ -264,7 +264,7 @@ const TermsCondition = () => {
                 By using and/or purchasing from{" "}
                 <a href="/" className="text-[#cc3882] font-[600]">
                   {" "}
-                  www.corepeptides.com
+                  www.usapeptideslab.com
                 </a>{" "}
                 , User agrees, represents, and warrants that they have conducted
                 their own research, study, and review of the following issues:
@@ -274,7 +274,7 @@ const TermsCondition = () => {
               The intended use of the products offered by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               , specifically as it relates to laboratory research.
             </p>
@@ -283,7 +283,7 @@ const TermsCondition = () => {
               any products offered by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               , and/or it’s handling thereof.
             </p>
@@ -292,7 +292,7 @@ const TermsCondition = () => {
               or possession of any products sold by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               in customer’s jurisdiction specific to customer’s municipality,
               state, country, or government.
@@ -308,12 +308,12 @@ const TermsCondition = () => {
               By purchasing from{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               , User understands and agrees that{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               products are not offered or sold for human or animal consumption
               of any kind, type, and methodology, whatsoever. If User does not
@@ -321,7 +321,7 @@ const TermsCondition = () => {
               not purchase from{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               .
             </p>
@@ -332,7 +332,7 @@ const TermsCondition = () => {
               products offered for sale by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               are not intended to be used as supplements, formula, food, food
               products, and cosmetic products, medical devices, for private or
@@ -340,21 +340,21 @@ const TermsCondition = () => {
               The products offered by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               are not to be considered as health products, foods, drugs, medical
               devices, cosmetics, or supplements. Any and all products offered
               by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               are only for research purposes.
             </p>
             <p>
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               shall not be liable for damages caused by any purchaser’s failure
               to abide by the terms of this Agreement, or that may be caused by
@@ -363,7 +363,7 @@ const TermsCondition = () => {
               offered by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               .
             </p>
@@ -371,12 +371,12 @@ const TermsCondition = () => {
               By purchasing from{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               , you understand and fully agree that{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com's
+                www.usapeptideslab.com's
               </a>{" "}
               products are strictly, only, and solely offered for, and intended
               for laboratory research professionals, by licensed professionals,
@@ -386,7 +386,7 @@ const TermsCondition = () => {
               User further agrees that any product purchased from
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com's
+                www.usapeptideslab.com's
               </a>{" "}
               will be fully examined and tested to meet any and all efficacy and
               safety standards applicable by law, before manufacturing,
@@ -394,7 +394,7 @@ const TermsCondition = () => {
               product sold by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com's
+                www.usapeptideslab.com's
               </a>{" "}
               . All research and testing is to be completed by an experienced,
               knowledgeable, and authorized under the appropriate regulatory
@@ -406,7 +406,7 @@ const TermsCondition = () => {
               User further agrees that any product purchased from
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com's
+                www.usapeptideslab.com's
               </a>{" "}
               shall not be changed, altered, modified, adulterated, or
               misbranded, under the Federal Food, Drug, and Cosmetic Act or is
@@ -418,19 +418,19 @@ const TermsCondition = () => {
               understand that all products sold by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com's
+                www.usapeptideslab.com's
               </a>{" "}
               are intended solely for laboratory research purposes only, and
               that the products sold by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com's
+                www.usapeptideslab.com's
               </a>{" "}
               may not be on the Toxic Substances Control Act inventory listing.
               You are solely responsible for ensuring that the products sold by
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com's
+                www.usapeptideslab.com's
               </a>{" "}
               are approved substances under the Toxic Substances Control Act if
               applicable to your jurisdiction.
@@ -439,19 +439,19 @@ const TermsCondition = () => {
               User agrees by purchasing from{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com's
+                www.usapeptideslab.com's
               </a>{" "}
               that you have the sole responsibility to verify the dangers and
               hazards of any product offered and sold by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com's
+                www.usapeptideslab.com's
               </a>{" "}
               . You further agree to conduct any and all research involving any
               product offered and sold by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com's
+                www.usapeptideslab.com's
               </a>{" "}
               .
             </p>
@@ -462,14 +462,14 @@ const TermsCondition = () => {
               agrees to indemnify and hold harmless{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com's
+                www.usapeptideslab.com's
               </a>{" "}
               (including its directors, officers, employees, partners, or
               owners) for any claim, suit, or demand, including attorney fees,
               made by any third-party due to or arising out of User’s use of
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               or User’s violation of the Terms & Conditions.
             </li>
@@ -477,32 +477,32 @@ const TermsCondition = () => {
               <span className="font-bold">WEBSITE. </span>{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               strives to keep its website online, up, and running without any
               pause or interruption. However, due to the technical nature of
               website hosting and related services,{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               may be unavailable for any reason at any time, without notice, and
               for any length of time. By using{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               User agrees that
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               will not be liable for any damages arising out of its website
               being unavailable at any time, for any reason. User further
               understands and agrees that{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               reserves the right to update, change, alter, or modify its
               website, which may cause delay or unavailability. User understands
@@ -510,12 +510,12 @@ const TermsCondition = () => {
               personal use with the intent of inquiring about or purchasing from
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               . User agrees and understands that the use of
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               is for individuals only and is prohibited from use by
               non-individuals or their agents, attorneys, or attorney
@@ -531,7 +531,7 @@ const TermsCondition = () => {
               modified in writing by{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               .
             </li>
@@ -559,7 +559,7 @@ const TermsCondition = () => {
               control{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               shall not be responsible for lost shipments, shipping delays,
               supply chain disruptions, custom order delays, lost or stolen
@@ -570,8 +570,8 @@ const TermsCondition = () => {
               <span className="font-bold">COMPLETE AGREEMENT.</span>The Terms
               and Conditions, in conjunction with the Privacy Policy referenced
               herein, constitute the entire agreement between
-              www.corepeptides.com and User regarding the use of this site, its
-              contents, and the products offered therein. When an order is
+              www.usapeptideslab.com and User regarding the use of this site,
+              its contents, and the products offered therein. When an order is
               placed, and User clicks “I agree,” User is agreeing to the entire
               terms and conditions, privacy policy, disclaimers, information,
               and all other disclosures made herein.

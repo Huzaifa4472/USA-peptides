@@ -14,7 +14,7 @@ const Footer = () => {
             purposes only, and are not for human consumption.
           </div>
           <p className="text-start leading-loose">
-            Core Peptides is a chemical supplier. Core Peptides is not a
+            USA Peptides Lab is a chemical supplier. USA Peptides Lab is not a
             compounding pharmacy or chemical compounding facility as defined
             under 503A of the Federal Food, Drug, and Cosmetic act. Core
             Peptides is not an outsourcing facility as defined under 503B of the
@@ -83,7 +83,7 @@ const Footer = () => {
       </div>
       <div className="bg-[#141313] w-[100%] flex items-center justify-center text-sm py-8 text-primary">
         <div className="w-[80%] text-center">
-          Copyright © 2025 Core Peptides. All rights reserved.
+          Copyright © 2025 USA Peptides Lab. All rights reserved.
         </div>
       </div>
     </div>

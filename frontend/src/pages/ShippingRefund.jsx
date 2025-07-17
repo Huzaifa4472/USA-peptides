@@ -19,7 +19,7 @@ const ShippingRefund = () => {
               Shipping
             </h1>
             <p>
-              We at Core Peptides offer Free Priority USPS shipping on orders
+              We at USA Peptides Lab offer Free Priority USPS shipping on orders
               over $200 within the US.
             </p>
             <p>
@@ -52,7 +52,7 @@ const ShippingRefund = () => {
               contacting us at{" "}
               <a href="/" className="text-[#cc3882] font-[600]">
                 {" "}
-                www.corepeptides.com
+                www.usapeptideslab.com
               </a>{" "}
               for a refund.
             </p>

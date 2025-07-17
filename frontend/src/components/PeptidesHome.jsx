@@ -22,10 +22,10 @@ const PeptidesHome = () => {
           </div>
 
           <p className="text-lg leading-7 mt-10 text-[#666]  bg-white">
-            Welcome to Core Peptides. We are proud to carry the highest quality
-            peptides and peptide blends in the research industry. All of our
-            peptides have gone through rigorous quality control procedures to
-            ensure our clients are receiving the best quality peptides
+            Welcome to USA Peptides Lab. We are proud to carry the highest
+            quality peptides and peptide blends in the research industry. All of
+            our peptides have gone through rigorous quality control procedures
+            to ensure our clients are receiving the best quality peptides
             available. We offer custom peptides for sale online.
           </p>
         </div>

@@ -12,8 +12,8 @@ const Contact = () => {
           </h1>
           <p className="text-white text-[15px]">
             You can email us directly at{" "}
-            <span className="text-[#dd78ab]">support@corepeptides.com</span> or
-            fill out the form below.
+            <span className="text-[#dd78ab]">support@usapeptideslab.com</span>{" "}
+            or fill out the form below.
           </p>
           <form>
             <div className="flex flex-col gap-4 text-white">
@@ -65,12 +65,12 @@ const Contact = () => {
           </h1>
           <div className="h-0.5 w-[30%] bg-white"></div>
           <p className="text-[15px]">
-            At Core Peptides, customer satisfaction is not taken lightly. We
+            At USA Peptides Lab, customer satisfaction is not taken lightly. We
             will do everything in our power to ensure that our customers are
             satisfied, even after products are delivered.
           </p>
           <div className="ml-8 mt-4 flex flex-col gap-2 text-[15px]">
-            <div className="font-[600]">support@corepeptides.com</div>
+            <div className="font-[600]">support@usapeptideslab.com</div>
             <div className="font-[600]">805-429-8132</div>
             <div className="font-[500]">
               5401 S Kirkman Rd suite 310, Orlando FL 32819

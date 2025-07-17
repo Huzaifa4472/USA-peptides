@@ -8,7 +8,7 @@ const AboutUs = () => {
         style={{ backgroundImage: `url(${Background})` }}
       >
         <h1 className=" md:mt-8 mt-4 sm:w-[80%] w-[90%] text-gradient md:text-[60px] text-[32px] font-[700]  leading-[70px]">
-          ABOUT CORE <br className="md:!flex hidden" /> PEPTIDES
+          ABOUT USA <br className="md:!flex hidden" /> PEPTIDES LAB
         </h1>
       </div>
       <div className="flex items-center w-[90%]">
