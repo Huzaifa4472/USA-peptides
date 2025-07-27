@@ -20,7 +20,7 @@ const NewsLetter = () => {
             <h2 className="md:text-[26px] text-[16px] font-[600]">
               SUBSCRIBE TO OUR NEWSLETTER
             </h2>
-            <p className="font-medium text-blue-300">
+            <p className="font-medium text-secondary">
               ENJOY PROMOTIONS AND DISCOUNTS
             </p>
           </div>
@@ -28,21 +28,21 @@ const NewsLetter = () => {
             <input
               type="text"
               placeholder="First Name"
-              className="w-full md:px-4 px-3 py-4 rounded-full  bg-transparent border border-blue-300 text-blue-300 focus:outline-none"
+              className="w-full md:px-4 px-3 py-4 rounded-full  bg-transparent border border-secondary text-secondary focus:outline-none"
             />
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-4 py-4 rounded-full bg-transparent border border-blue-300 text-blue-300 focus:outline-none"
+              className="w-full px-4 py-4 rounded-full bg-transparent border border-secondary text-secondary focus:outline-none"
             />
-            <div className="flex items-center w-full px-2 py-4 rounded-full border border-blue-300  bg-transparent text-blue-300 focus-within:ring-2 focus:outline-none">
+            <div className="flex items-center w-full px-2 py-4 rounded-full border border-secondary  bg-transparent text-secondary focus-within:ring-2 focus:outline-none">
               <PhoneInput
                 placeholder="Enter phone number"
                 international
                 defaultCountry="US"
                 value={phone}
                 onChange={setPhone}
-                className="flex-1 [&>input]:bg-transparent [&>input]:text-blue-300 [&>input]:placeholder:text-blue-300 [&>input]:outline-none [&>input]:ring-0 focus:[&>input]:outline-none focus:[&>input]:ring-0"
+                className="flex-1 [&>input]:bg-transparent [&>input]:text-secondary [&>input]:placeholder:text-secondary [&>input]:outline-none [&>input]:ring-0 focus:[&>input]:outline-none focus:[&>input]:ring-0"
               />
             </div>
 
@@ -56,7 +56,7 @@ const NewsLetter = () => {
               <input type="checkbox" className="accent-blue-400" />
               Text me with offers and updates
             </label>
-            <div className=" text-blue-300 flex items-center justify-between gap-2">
+            <div className=" text-secondary flex items-center justify-between gap-2">
               <p className="text-xs">
                 We promise not to spam you. Read our privacy policy for more
                 information.

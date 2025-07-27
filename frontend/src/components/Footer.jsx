@@ -1,4 +1,4 @@
-import Logo from "../assets/core-logo.png";
+import Logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
 import Payment from "../assets/amex.webp";
 const Footer = () => {
@@ -16,8 +16,8 @@ const Footer = () => {
           <p className="text-start leading-loose">
             USA Peptides Lab is a chemical supplier. USA Peptides Lab is not a
             compounding pharmacy or chemical compounding facility as defined
-            under 503A of the Federal Food, Drug, and Cosmetic act. Core
-            Peptides is not an outsourcing facility as defined under 503B of the
+            under 503A of the Federal Food, Drug, and Cosmetic act. USA Peptides
+            Lab is not an outsourcing facility as defined under 503B of the
             Federal Food, Drug, and Cosmetic act.
             <br /> The statements made within this website have not been
             evaluated by the US Food and Drug Administration. The products we
