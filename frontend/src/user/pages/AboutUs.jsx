@@ -1,5 +1,5 @@
 import React from "react";
-import Background from "../assets/about-bg.jpg";
+import Background from "../../assets/about-bg.jpg";
 const AboutUs = () => {
   return (
     <div className="flex flex-col items-end gap-14 mb-20">

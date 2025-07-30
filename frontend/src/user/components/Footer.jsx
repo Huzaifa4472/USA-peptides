@@ -1,6 +1,6 @@
-import Logo from "../assets/logo.png";
+import Logo from "../../assets/logo.png";
 import { NavLink } from "react-router-dom";
-import Payment from "../assets/amex.webp";
+import Payment from "../../assets/amex.webp";
 const Footer = () => {
   return (
     <div className="bg-black text-white">
@@ -34,37 +34,37 @@ const Footer = () => {
             </div>
             <nav className="flex flex-col font-medium gap-3 text-sm mt-8">
               <NavLink
-                to="/peptides"
+                to="/user/peptides"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Peptides for Sale
               </NavLink>
               <NavLink
-                to="/about-us"
+                to="/user/about-us"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 About Us
               </NavLink>
               <NavLink
-                to="/shipping"
+                to="/user/shipping"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Shipping, Returns & Refunds
               </NavLink>
               <NavLink
-                to="/privacy-policy"
+                to="/user/privacy-policy"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Privacy Policy
               </NavLink>
               <NavLink
-                to="/terms-condition"
+                to="/user/terms-condition"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Terms and Conditions
               </NavLink>
               <NavLink
-                to="/contact"
+                to="/user/contact"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Contact

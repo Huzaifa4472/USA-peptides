@@ -1,6 +1,6 @@
 import React from "react";
-const herobg = require("../assets/herobg.jpeg");
-const heropd = require("../assets/hero-product.webp");
+const herobg = require("../../assets/herobg.jpeg");
+const heropd = require("../../assets/hero-product.webp");
 
 const HeroSection = () => {
   return (
@@ -17,9 +17,9 @@ const HeroSection = () => {
             We are proud to carry the highest quality peptides and peptide
             blends in the research industry.
           </p>
-          <button className="text-secondary bg-transparent border border-secondary hover:text-white hover:bg-secondary py-1.5 px-5 sm:text-[20px] text-[18px] rounded-2xl">
+          <a href="/user/peptides" className="text-secondary bg-transparent border border-secondary hover:text-white hover:bg-secondary py-1.5 px-5 sm:text-[20px] text-[18px] rounded-2xl">
             BUY PEPTIDES
-          </button>
+          </a>
         </div>
         <div className="lg:w-1/2 flex items-center justify-center  ">
           <img src={heropd} alt="product" className="lg:mt-14" />

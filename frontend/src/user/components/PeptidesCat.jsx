@@ -1,7 +1,7 @@
 import React from "react";
-const catbg = require("../assets/blend&peptide.webp");
-const peptidesCat = require("../assets/peptides-cat.png");
-const blendCat = require("../assets/blend-cat.png");
+const catbg = require("../../assets/blend&peptide.webp");
+const peptidesCat = require("../../assets/peptides-cat.png");
+const blendCat = require("../../assets/blend-cat.png");
 
 const PeptidesCat = () => {
   return (
@@ -14,19 +14,21 @@ const PeptidesCat = () => {
           <img
             src={peptidesCat}
             className="h-56 rounded-b-[2000px] rounded-t-[300px] border"
+            alt="Peptides Category"
           />
-          <button className="text-[#9E6A2B] font-medium sm:text-lg text-[15px] border-2 border-[#9E6A2B] px-4 py-2 rounded-2xl hover:bg-[#9E6A2B] hover:text-white transition-all duration-500 ease-in-out">
+          <a href="/user/peptides" className="text-[#9E6A2B] font-medium sm:text-lg text-[15px] border-2 border-[#9E6A2B] px-4 py-2 rounded-2xl hover:bg-[#9E6A2B] hover:text-white transition-all duration-500 ease-in-out">
             PEPTIDES
-          </button>
+          </a>
         </div>
         <div className=" flex flex-col items-center gap-4">
           <img
             src={blendCat}
             className="h-56 rounded-b-[2000px] rounded-t-[300px] border"
+            alt="Blend Category"
           />
-          <button className="text-[#D14D90] font-medium sm:text-lg text-[15px] border-2 border-[#D14D90] px-4 py-2 rounded-2xl hover:bg-[#D14D90] hover:text-white transition-all duration-500 ease-in-out">
+          <a href="/user/peptides" className="text-[#D14D90] font-medium sm:text-lg text-[15px] border-2 border-[#D14D90] px-4 py-2 rounded-2xl hover:bg-[#D14D90] hover:text-white transition-all duration-500 ease-in-out">
             PEPTIDE BLENDS
-          </button>
+          </a>
         </div>
       </div>
     </div>

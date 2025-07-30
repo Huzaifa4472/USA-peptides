@@ -1,7 +1,7 @@
 import React from "react";
-const plane = require("../assets/plane.png");
-const support = require("../assets/support.png");
-const badge = require("../assets/badge.png");
+const plane = require("../../assets/plane.png");
+const support = require("../../assets/support.png");
+const badge = require("../../assets/badge.png");
 
 const Support = () => {
   return (

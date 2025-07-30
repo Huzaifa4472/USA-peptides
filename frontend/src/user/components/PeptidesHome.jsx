@@ -1,5 +1,5 @@
 import React from "react";
-import PeptidesHomeBg from "../assets/home-peptides.webp";
+import PeptidesHomeBg from "../../assets/home-peptides.webp";
 
 const PeptidesHome = () => {
   return (
@@ -30,9 +30,9 @@ const PeptidesHome = () => {
           </p>
         </div>
         <div className="md:w-1/2   p-4 flex flex-col justify-end items-center">
-          <button className="lg:text-2xl sm:text-[25px] text-[20px] font-medium bg-gradient lg:py-5 py-3 lg:px-10 sm:px-8 px-6  lg:mt-60 rounded-full btn-gradient ">
+          <a href="/user/peptides" className="lg:text-2xl sm:text-[25px] text-[20px] font-medium bg-gradient lg:py-5 py-3 lg:px-10 sm:px-8 px-6  lg:mt-60 rounded-full btn-gradient ">
             SHOP NOW
-          </button>
+          </a>
         </div>
       </div>
     </div>

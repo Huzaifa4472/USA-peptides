@@ -1,7 +1,7 @@
 import React from "react";
 import ProductItemms from "../components/ProductItemms";
-const herobg = require("../assets/peptides-bg.jpg");
-const heropd = require("../assets/hero-product.webp");
+const herobg = require("../../assets/peptides-bg.jpg");
+const heropd = require("../../assets/hero-product.webp");
 const Peptides = () => {
   return (
     <div>

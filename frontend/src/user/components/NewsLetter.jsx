@@ -3,7 +3,7 @@ import { HiArrowTopRightOnSquare } from "react-icons/hi2";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 
-const NewsLetterBg = require("../assets/news-letter.png");
+const NewsLetterBg = require("../../assets/news-letter.png");
 
 const NewsLetter = () => {
   const [phone, setPhone] = useState("");

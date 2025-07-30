@@ -1,28 +1,49 @@
-import Logo from "../assets/logo.png";
+import Logo from "../../assets/logo.png";
 import { FaShoppingCart } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiOutlineUser } from "react-icons/hi";
 import { IoMdSearch } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { SlMenu } from "react-icons/sl";
 import { IoMdClose } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+import data from "../../data.json";
 
 const Header = () => {
   const [count, setCount] = useState(2);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+const [searchOpen, setSearchOpen] = useState(false);
+const [searchQuery, setSearchQuery] = useState("");
+const [filteredResults, setFilteredResults] = useState([]);
+const navigate = useNavigate();
+
+
+useEffect(() => {
+  if (searchQuery.trim() === "") {
+    setFilteredResults([]);
+    return;
+  }
+
+  const results = data.filter((product) =>
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  setFilteredResults(results);
+}, [searchQuery]);
 
   return (
     <div className="bg-black text-white sticky top-0 z-50">
       <div className="md:w-[80%] w-[90%] mx-auto flex items-center justify-between md:py-3 py-3">
-        <NavLink to="/">
+        <NavLink to="/user">
           <img src={Logo} alt="Logo" className="md:w-32 w-24" />
         </NavLink>
 
         <div className="flex items-center gap-10">
           <nav className="hidden lg:!flex items-center font-medium gap-6 ">
             <NavLink
-              to="/"
+              to="/user"
+              end
               className={({ isActive }) =>
                 isActive
                   ? "text-primary text-[14px]"
@@ -32,7 +53,7 @@ const Header = () => {
               HOME
             </NavLink>
             <NavLink
-              to="/peptides"
+              to="/user/peptides"
               className={({ isActive }) =>
                 isActive
                   ? "text-primary text-[14px]"
@@ -42,7 +63,7 @@ const Header = () => {
               PEPTIDES FOR SALE
             </NavLink>
             <NavLink
-              to="/about-us"
+              to="/user/about-us"
               className={({ isActive }) =>
                 isActive
                   ? "text-primary text-[14px]"
@@ -52,7 +73,7 @@ const Header = () => {
               ABOUT US
             </NavLink>
             <NavLink
-              to="/contact"
+              to="/user/contact"
               className={({ isActive }) =>
                 isActive
                   ? "text-primary text-[14px]"
@@ -65,7 +86,7 @@ const Header = () => {
 
           {/* Icons */}
           <div className="text-2xl flex items-center sm:gap-6 gap-3">
-            <NavLink to="/my-accounts">
+            <NavLink to="/user/my-accounts">
               <HiOutlineUser className="lg:!flex hidden" />
             </NavLink>
             <div
@@ -79,7 +100,7 @@ const Header = () => {
                 </span>
               )}
             </div>
-            <IoMdSearch />
+            <IoMdSearch onClick={() => setSearchOpen(true)} className="cursor-pointer" />
             <div
               className="lg:hidden text-2xl cursor-pointer"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -89,6 +110,66 @@ const Header = () => {
           </div>
         </div>
       </div>
+{searchOpen && (
+  <div className="absolute top-0 left-0 w-[100%]  z-40 flex justify-center items-center px-4 py-3">
+
+    <div className="w-[82%] items-center rounded-lg bg-black border-2 border-primary  relative px-4">
+      <button
+        className="absolute right-4 top-4 text-black  text-xl text-primary"
+        onClick={() => { setSearchOpen(false); setSearchQuery(""); }}
+      >
+        <IoMdClose size={30} />
+      </button>
+      <input
+        type="text"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="w-full bg-transparent py-6 rounded-md text-primary outline-none"
+      />
+
+      {/* Search Results */}
+      {searchQuery && (
+        <div className="mt-4">
+          {filteredResults.length > 0 ? (
+            <>
+              <ul className=" max-h-60 overflow-y-auto">
+                {filteredResults.slice(0, 5).map((product) => (
+                  <li
+                    key={product.id}
+                    className="border-b border-[#666]  p-6 hover:bg-[#666] transition cursor-pointer"
+                    onClick={() => {
+                      navigate(product.url);
+                      setSearchOpen(false);
+                    }}
+                  >
+                    <div className="flex items-center gap-2">
+                      <img src={product.image} alt={product.name} className="w-12 h-12 object-cover rounded-md" />
+                      <div className=""><div>{product.name}</div><div>{product.price}</div></div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              {filteredResults.length > 5 && (
+                <p
+                  className="text-primary text-sm mt-4 underline cursor-pointer"
+                  onClick={() => {
+                    navigate(`/user/search?query=${searchQuery}`);
+                    setSearchOpen(false);
+                  }}
+                >
+                  View all results
+                </p>
+              )}
+            </>
+          ) : (
+            <p className="text-sm mt-4 text-gray-500">No products found.</p>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+)}
+
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out border-t-2 border-primary ${
           menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
@@ -96,7 +177,8 @@ const Header = () => {
       >
         <nav className="flex flex-col gap-4 py-4 font-medium ">
           <NavLink
-            to="/"
+            to="/user"
+            end
             className={({ isActive }) =>
               isActive
                 ? "text-primary text-[14px]"
@@ -107,7 +189,7 @@ const Header = () => {
             HOME
           </NavLink>
           <NavLink
-            to="/peptides"
+            to="/user/peptides"
             className={({ isActive }) =>
               isActive
                 ? "text-primary text-[14px]"
@@ -118,7 +200,7 @@ const Header = () => {
             PEPTIDES FOR SALE
           </NavLink>
           <NavLink
-            to="/about-us"
+            to="/user/about-us"
             className={({ isActive }) =>
               isActive
                 ? "text-primary text-[14px]"
@@ -129,7 +211,7 @@ const Header = () => {
             ABOUT US
           </NavLink>
           <NavLink
-            to="/contact"
+            to="/user/contact"
             className={({ isActive }) =>
               isActive
                 ? "text-primary text-[14px]"
@@ -141,7 +223,7 @@ const Header = () => {
           </NavLink>
           <div className="flex items-center justify-between">
             <NavLink
-              to="/my-accounts"
+              to="/user/my-accounts"
               className={({ isActive }) =>
                 isActive
                   ? "text-primary text-[14px]"
@@ -152,7 +234,7 @@ const Header = () => {
               MY ACCOUNT
             </NavLink>
             <NavLink
-              to="/my-accounts"
+              to="/user/my-accounts"
               className={({ isActive }) =>
                 isActive ? "text-primary text-[14px]" : "hover:text-primary"
               }
@@ -180,7 +262,6 @@ const Header = () => {
         </div>
 
         <div className="p-4 space-y-4">
-          {/* Example Cart Items - Replace with your actual cart items */}
           <div className="flex justify-between items-center">
             <div>
               <p className="font-medium">Product Name</p>
@@ -195,7 +276,6 @@ const Header = () => {
             </div>
             <p className="font-semibold">$50.00</p>
           </div>
-          {/* ... More Items */}
         </div>
       </div>
     </div>
