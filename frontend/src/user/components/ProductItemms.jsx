@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import data from "../../data.json"; // Assuming you have a products data file
 const ProductItemms = () => {
-    const [sortOption, setSortOption] = useState("Sort by popularity");
+  const [sortOption, setSortOption] = useState("Sort by popularity");
   const [products, setProducts] = useState([...data]);
-  
+
   const handleSortChange = (e) => {
     const value = e.target.value;
     setSortOption(value);
@@ -16,17 +16,17 @@ const ProductItemms = () => {
       //   break;
       case "Sort by price: low to high":
         sortedProducts.sort(
-        (a, b) =>
-          parseFloat(a.price.replace(/[^0-9.]/g, "")) -
-          parseFloat(b.price.replace(/[^0-9.]/g, ""))
-      );
+          (a, b) =>
+            parseFloat(a.price.replace(/[^0-9.]/g, "")) -
+            parseFloat(b.price.replace(/[^0-9.]/g, ""))
+        );
         break;
       case "Sort by price: high to low":
         sortedProducts.sort(
-        (a, b) =>
-          parseFloat(b.price.replace(/[^0-9.]/g, "")) -
-          parseFloat(a.price.replace(/[^0-9.]/g, ""))
-      );
+          (a, b) =>
+            parseFloat(b.price.replace(/[^0-9.]/g, "")) -
+            parseFloat(a.price.replace(/[^0-9.]/g, ""))
+        );
         break;
       case "Sort by title: (A-Z)":
         sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
@@ -47,9 +47,14 @@ const ProductItemms = () => {
           Research Peptides For Sale
         </div>
         <div className="flex items-center justify-between w-[80%] p-2 my-8">
-          <p className="font-[600] font-[14px] leading-[26px]">Showing all {data.length} result</p>
-          <select className="border p-2 rounded-md" value={sortOption}
-            onChange={handleSortChange}>
+          <p className="font-[600] text-[14px] leading-[26px]">
+            Showing all {data.length} result
+          </p>
+          <select
+            className="border p-2 rounded-md"
+            value={sortOption}
+            onChange={handleSortChange}
+          >
             <option>Sort by popularity</option>
             <option>Sort by latest</option>
             <option>Sort by price: low to high</option>
@@ -76,7 +81,6 @@ const ProductItemms = () => {
                   {product.name}
                 </h2>
                 <p className="text-[#cc3882] font-bold">{product.price}</p>
-            
               </a>
             </div>
           ))}

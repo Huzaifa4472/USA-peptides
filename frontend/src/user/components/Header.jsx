@@ -13,24 +13,23 @@ const Header = () => {
   const [count, setCount] = useState(2);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-const [searchOpen, setSearchOpen] = useState(false);
-const [searchQuery, setSearchQuery] = useState("");
-const [filteredResults, setFilteredResults] = useState([]);
-const navigate = useNavigate();
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredResults, setFilteredResults] = useState([]);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setFilteredResults([]);
+      return;
+    }
 
-useEffect(() => {
-  if (searchQuery.trim() === "") {
-    setFilteredResults([]);
-    return;
-  }
+    const results = data.filter((product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
-  const results = data.filter((product) =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  setFilteredResults(results);
-}, [searchQuery]);
+    setFilteredResults(results);
+  }, [searchQuery]);
 
   return (
     <div className="bg-black text-white sticky top-0 z-50">
@@ -100,7 +99,10 @@ useEffect(() => {
                 </span>
               )}
             </div>
-            <IoMdSearch onClick={() => setSearchOpen(true)} className="cursor-pointer" />
+            <IoMdSearch
+              onClick={() => setSearchOpen(true)}
+              className="cursor-pointer"
+            />
             <div
               className="lg:hidden text-2xl cursor-pointer"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -110,65 +112,76 @@ useEffect(() => {
           </div>
         </div>
       </div>
-{searchOpen && (
-  <div className="absolute top-0 left-0 w-[100%]  z-40 flex justify-center items-center px-4 py-3">
+      {searchOpen && (
+        <div className="absolute top-0 left-0 w-[100%]  z-40 flex justify-center items-center px-4 py-3">
+          <div className="w-[82%] items-center rounded-lg bg-black border-2 border-primary  relative px-4">
+            <button
+              className="absolute right-4 top-4  text-xl text-primary"
+              onClick={() => {
+                setSearchOpen(false);
+                setSearchQuery("");
+              }}
+            >
+              <IoMdClose size={30} />
+            </button>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-transparent py-6 rounded-md text-primary outline-none"
+            />
 
-    <div className="w-[82%] items-center rounded-lg bg-black border-2 border-primary  relative px-4">
-      <button
-        className="absolute right-4 top-4 text-black  text-xl text-primary"
-        onClick={() => { setSearchOpen(false); setSearchQuery(""); }}
-      >
-        <IoMdClose size={30} />
-      </button>
-      <input
-        type="text"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        className="w-full bg-transparent py-6 rounded-md text-primary outline-none"
-      />
-
-      {/* Search Results */}
-      {searchQuery && (
-        <div className="mt-4">
-          {filteredResults.length > 0 ? (
-            <>
-              <ul className=" max-h-60 overflow-y-auto">
-                {filteredResults.slice(0, 5).map((product) => (
-                  <li
-                    key={product.id}
-                    className="border-b border-[#666]  p-6 hover:bg-[#666] transition cursor-pointer"
-                    onClick={() => {
-                      navigate(product.url);
-                      setSearchOpen(false);
-                    }}
-                  >
-                    <div className="flex items-center gap-2">
-                      <img src={product.image} alt={product.name} className="w-12 h-12 object-cover rounded-md" />
-                      <div className=""><div>{product.name}</div><div>{product.price}</div></div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              {filteredResults.length > 5 && (
-                <p
-                  className="text-primary text-sm mt-4 underline cursor-pointer"
-                  onClick={() => {
-                    navigate(`/user/search?query=${searchQuery}`);
-                    setSearchOpen(false);
-                  }}
-                >
-                  View all results
-                </p>
-              )}
-            </>
-          ) : (
-            <p className="text-sm mt-4 text-gray-500">No products found.</p>
-          )}
+            {/* Search Results */}
+            {searchQuery && (
+              <div className="mt-4">
+                {filteredResults.length > 0 ? (
+                  <>
+                    <ul className=" max-h-60 overflow-y-auto">
+                      {filteredResults.slice(0, 5).map((product) => (
+                        <li
+                          key={product.id}
+                          className="border-b border-[#666]  p-6 hover:bg-[#666] transition cursor-pointer"
+                          onClick={() => {
+                            navigate(product.url);
+                            setSearchOpen(false);
+                          }}
+                        >
+                          <div className="flex items-center gap-2">
+                            <img
+                              src={product.image}
+                              alt={product.name}
+                              className="w-12 h-12 object-cover rounded-md"
+                            />
+                            <div className="">
+                              <div>{product.name}</div>
+                              <div>{product.price}</div>
+                            </div>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                    {filteredResults.length > 5 && (
+                      <p
+                        className="text-primary text-sm mt-4 underline cursor-pointer"
+                        onClick={() => {
+                          navigate(`/user/search?query=${searchQuery}`);
+                          setSearchOpen(false);
+                        }}
+                      >
+                        View all results
+                      </p>
+                    )}
+                  </>
+                ) : (
+                  <p className="text-sm mt-4 text-gray-500">
+                    No products found.
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       )}
-    </div>
-  </div>
-)}
 
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out border-t-2 border-primary ${
