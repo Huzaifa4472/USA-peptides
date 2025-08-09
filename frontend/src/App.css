@@ -19,3 +19,7 @@
     background-position: center;
   }
 }
+:root {
+  --primary: #b31942;
+  --secondary: #093161;
+}

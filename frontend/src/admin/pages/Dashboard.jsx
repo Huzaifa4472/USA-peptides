@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../components/Header.jsx";
 import Sidebar from "../components/Sidebar.jsx";
+import DashboardComponent from "../components/Dashboard/DashboardComponent.jsx";
 const Dashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -15,7 +16,7 @@ const Dashboard = () => {
       </div>
       <div className="w-4/5 rounded-md shadow-lg">
         <Header collapsed={collapsed} setCollapsed={setCollapsed} />
-        <div className="p-5 text-3xl font-bold text-gray-700">Dashboard</div>
+        <DashboardComponent />
       </div>
     </div>
   );

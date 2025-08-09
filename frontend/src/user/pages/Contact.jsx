@@ -70,7 +70,7 @@ const Contact = () => {
             satisfied, even after products are delivered.
           </p>
           <div className="ml-8 mt-4 flex flex-col gap-2 text-[15px]">
-            <div className="font-[600]">support@usapeptideslab.com</div>
+            <div className="font-[600]">info@usapeptidelab.com</div>
             <div className="font-[600]">805-429-8132</div>
             <div className="font-[500]">
               5401 S Kirkman Rd suite 310, Orlando FL 32819
