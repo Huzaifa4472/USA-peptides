@@ -47,7 +47,12 @@ const Sidebar = ({ collapsed }) => {
         </NavLink>
       </div>
 
-      <NavLink to="/admin/dashboard" className={linkClasses}>
+      <NavLink
+        to="/admin/dashboard"
+        className={({ isActive }) =>
+          `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
+        }
+      >
         {menuItem(<FaTachometerAlt />, "Dashboard")}
       </NavLink>
 
@@ -69,16 +74,36 @@ const Sidebar = ({ collapsed }) => {
               : "max-h-0 opacity-0"
           }`}
         >
-          <NavLink to="/admin/products/add" className={linkClasses}>
+          <NavLink
+            to="/admin/products/add"
+            className={({ isActive }) =>
+              `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
+            }
+          >
             Add Product
           </NavLink>
-          <NavLink to="/admin/products" className={linkClasses}>
+          <NavLink
+            to="/admin/productslist"
+            className={({ isActive }) =>
+              `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
+            }
+          >
             View/Edit/Delete
           </NavLink>
-          <NavLink to="/admin/products/images" className={linkClasses}>
+          <NavLink
+            to="/admin/products/images"
+            className={({ isActive }) =>
+              `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
+            }
+          >
             Manage Images
           </NavLink>
-          <NavLink to="/admin/products/pricing" className={linkClasses}>
+          <NavLink
+            to="/admin/products/pricing"
+            className={({ isActive }) =>
+              `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
+            }
+          >
             Pricing & Stock
           </NavLink>
         </div>
@@ -103,10 +128,20 @@ const Sidebar = ({ collapsed }) => {
               : "max-h-0 opacity-0"
           }`}
         >
-          <NavLink to="/admin/orders" className={linkClasses}>
+          <NavLink
+            to="/admin/orders"
+            className={({ isActive }) =>
+              `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
+            }
+          >
             View Orders
           </NavLink>
-          <NavLink to="/admin/orders/reports" className={linkClasses}>
+          <NavLink
+            to="/admin/orders/reports"
+            className={({ isActive }) =>
+              `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
+            }
+          >
             Reports
           </NavLink>
         </div>
@@ -130,17 +165,32 @@ const Sidebar = ({ collapsed }) => {
               : "max-h-0 opacity-0"
           }`}
         >
-          <NavLink to="/admin/users" className={linkClasses}>
+          <NavLink
+            to="/admin/users"
+            className={({ isActive }) =>
+              `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
+            }
+          >
             View Users
           </NavLink>
-          <NavLink to="/admin/users/orders" className={linkClasses}>
+          <NavLink
+            to="/admin/users/orders"
+            className={({ isActive }) =>
+              `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
+            }
+          >
             Order History
           </NavLink>
         </div>
       </div>
 
       {/* Category & Tag Management */}
-      <NavLink to="/admin/categories" className={linkClasses}>
+      <NavLink
+        to="/admin/categories"
+        className={({ isActive }) =>
+          `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
+        }
+      >
         {menuItem(<FaTags />, "Category & Tag Management")}
       </NavLink>
     </div>

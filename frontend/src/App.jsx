@@ -1,10 +1,16 @@
-import { BrowserRouter as Router, Routes, Route,Navigate, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import { useEffect } from "react";
 import "./App.css";
 import Header from "./user/components/Header";
 import Footer from "./user/components/Footer";
-import userRoutes from "./routes/UserRoute";
-import adminRoutes from "./routes/AdminRoute";
+import UserRoutes from "./routes/UserRoute";
+import AdminRoutes from "./routes/AdminRoute";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -13,7 +19,7 @@ function ScrollToTop() {
   }, [pathname]);
   return null;
 }
- function LayoutWrapper({ children }) {
+function LayoutWrapper({ children }) {
   const { pathname } = useLocation();
   const isAdmin = pathname.startsWith("/admin");
 
@@ -41,11 +47,11 @@ function App() {
 }
 
 function UserWrapper() {
-  return <Routes>{userRoutes}</Routes>;
+  return <Routes>{UserRoutes}</Routes>;
 }
 
 function AdminWrapper() {
-  return <Routes>{adminRoutes}</Routes>;
+  return <Routes>{AdminRoutes}</Routes>;
 }
 
 export default App;

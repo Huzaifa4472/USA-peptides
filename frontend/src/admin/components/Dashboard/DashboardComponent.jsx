@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   LineChart,
   Line,
-  CartesianGrid,
+  Cell,
   XAxis,
   YAxis,
   Tooltip,
@@ -37,7 +37,7 @@ const DashboardComponent = () => {
     { name: "Product F", sales: 700 },
     { name: "Product G", sales: 600 },
     { name: "Product H", sales: 100 },
-    { name: "Product I", sales: 800 },
+    { name: "Product I", sales: 400 },
     { name: "Product J", sales: 300 },
   ];
 
@@ -62,10 +62,12 @@ const DashboardComponent = () => {
   ];
   const [orderPage, setOrderPage] = useState(0);
   const [productPage, setProductPage] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
 
+  const primaryColor = "var(--primary)";
+  const secondaryColor = "var(--secondary)";
   const itemsPerPage = 5;
 
-  // Paginated slices
   const paginatedOrders = recentOrders.slice(
     orderPage * itemsPerPage,
     orderPage * itemsPerPage + itemsPerPage
@@ -75,6 +77,17 @@ const DashboardComponent = () => {
     productPage * itemsPerPage,
     productPage * itemsPerPage + itemsPerPage
   );
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="bg-white p-2 shadow rounded text-sm">
+          <p className="font-semibold">{label}</p>
+          <p>Sales: {payload[0].value}</p>
+        </div>
+      );
+    }
+    return null;
+  };
 
   const totalOrderPages = Math.ceil(recentOrders.length / itemsPerPage);
   const totalProductPages = Math.ceil(bestSelling.length / itemsPerPage);
@@ -125,13 +138,28 @@ const DashboardComponent = () => {
         {/* Sales Chart */}
         <div className="bg-white p-5 rounded-lg shadow-md">
           <h2 className="text-lg font-semibold mb-3">Sales by Product</h2>
-          <ResponsiveContainer width="100%" height={250}>
-            <BarChart data={salesData}>
-              <CartesianGrid stroke="#ccc" />
+          <ResponsiveContainer width="100%" height={350}>
+            <BarChart data={salesData} barCategoryGap="25%">
               <XAxis dataKey="name" />
               <YAxis />
-              <Tooltip />
-              <Bar dataKey="sales" fill="var(--secondary)" />
+              <Tooltip
+                content={<CustomTooltip />}
+                cursor={{ fill: "transparent" }}
+              />
+              <Bar
+                dataKey="sales"
+                radius={[8, 8, 0, 0]}
+                fill="var(--secondary)"
+                onMouseEnter={(_, index) => setActiveIndex(index)}
+                onMouseLeave={() => setActiveIndex(null)}
+              >
+                {salesData.map((entry, index) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={index === activeIndex ? primaryColor : secondaryColor}
+                  />
+                ))}
+              </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>

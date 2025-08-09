@@ -37,14 +37,14 @@ const Header = ({ collapsed, setCollapsed }) => {
             className="cursor-pointer  p-2  "
             onClick={() => setShowDropdown((prev) => !prev)}
           >
-            <img className="w-10" src={Profile} />
+            <img className="w-10" src={Profile} alt="profile" />
           </div>
 
           {showDropdown && (
             <div className="absolute right-0 mt-2 text-sm w-56 bg-white shadow-lg rounded-lg z-10">
               <ul className=" text-gray-700 ">
                 <li className="flex gap-2 px-4 py-2 border-b hover:bg-gray-100 cursor-pointer">
-                  <img src={Profile} className="w-10" />
+                  <img src={Profile} alt="profile" className="w-10" />
                   <div className="flex flex-col">
                     <span className="text-[12px] font-semibold">
                       Toby Belhome
