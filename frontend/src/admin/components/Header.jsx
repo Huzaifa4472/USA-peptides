@@ -26,7 +26,7 @@ const Header = ({ collapsed, setCollapsed }) => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:5000/api/v1/logout",
+        "https://984f868854d6.ngrok-free.app/api/v1/logout",
         {},
         { withCredentials: true }
       );

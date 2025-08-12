@@ -39,7 +39,7 @@ const MyAccount = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/v1/login",
+        "https://984f868854d6.ngrok-free.app/api/v1/login",
         { email: loginEmail, password: loginPassword },
         { withCredentials: true }
       );
@@ -62,7 +62,7 @@ const MyAccount = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/v1/sendSignupLink",
+        "https://984f868854d6.ngrok-free.app/api/v1/sendSignupLink",
         { email: registerEmail }
       );
       toast.success(res.data?.message || "Signup link sent!", toastConfig);
