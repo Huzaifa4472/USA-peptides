@@ -389,7 +389,7 @@
     "url": "https://www.corepeptides.com/peptides/snap-8-200mg/",
     "image": "https://www.corepeptides.com/wp-content/uploads/2023/03/Snap-8-200mg.jpg",
     "name": "SNAP-8 (200mg)",
-    "price": "$195.00 Original price was: $195.00.$176.00Current price is: $176.00.",
+    "price": "$195.00",
     "specs": [
       "Size: 200mg Contents: SNAP-8 Form: Lyophilized powder Purity: >99% SKU: SNAP-8",
       "FREE Shipping on $200+ orders"
@@ -411,7 +411,7 @@
     "url": "https://www.corepeptides.com/peptides/sermorelin-5mg/",
     "image": "https://www.corepeptides.com/wp-content/uploads/2020/04/Sermorelin-5mg.jpg",
     "name": "Sermorelin (5mg)",
-    "price": "$50.00 Original price was: $50.00.$48.00Current price is: $48.00.",
+    "price": "$50.00",
     "specs": [
       "Size: 5mg Contents: Sermorelin Form: Lyophilized powder Purity: >99% SKU: P-SERMORELIN-5",
       "FREE Shipping on $200+ orders"
@@ -433,7 +433,7 @@
     "url": "https://www.corepeptides.com/peptides/semaglutide-glp-1/",
     "image": "https://www.corepeptides.com/wp-content/uploads/2022/12/Semaglutide-GLP-1.jpg",
     "name": "Semaglutide (3mg / 5mg / 10mg)",
-    "price": "$109.00 \u2013 $243.00",
+    "price": "$109.00",
     "specs": [
       "Size: 3mg / 5mg / 10mg Contents: Semaglutide Form: Lyophilized powder Purity: >99% SKU: P-Semaglutide",
       "FREE Shipping on $200+ orders"
@@ -466,7 +466,7 @@
     "url": "https://www.corepeptides.com/peptides/receptor-grade-igf-1-lr3-1mg/",
     "image": "https://www.corepeptides.com/wp-content/uploads/2020/04/IGF-1-LR3-Receptor-Grade-1MG.jpg",
     "name": "Receptor Grade IGF-1 LR3 (1mg)",
-    "price": "$150.00 Original price was: $150.00.$95.00Current price is: $95.00.",
+    "price": "$150.00",
     "specs": [
       "Size: 1mg Contents: Receptor Grade IGF-1 LR3 (1mg) Form: Lyophilized powder Purity: >99% SKU: P-IGF1LR3-1",
       "FREE Shipping on $200+ orders"
@@ -653,7 +653,7 @@
     "url": "https://www.corepeptides.com/peptides/nad-100mg-750mg/",
     "image": "https://www.corepeptides.com/wp-content/uploads/2021/08/NAD.jpg",
     "name": "NAD+ (100mg / 750mg)",
-    "price": "$47.00 \u2013 $292.00",
+    "price": "$47.00",
     "specs": [
       "Size: 100mg / 750mg Contents: NAD+ Form: Lyophilized powder Purity: >99% SKU: P-NADPLUS-100-750",
       "FREE Shipping on $100+ orders"
@@ -818,7 +818,7 @@
     "url": "https://www.corepeptides.com/peptides/kpv-4mg/",
     "image": "https://www.corepeptides.com/wp-content/uploads/2022/01/KPV-4mg.jpg",
     "name": "KPV (4mg)",
-    "price": "$45.00 Original price was: $45.00.$38.00Current price is: $38.00.",
+    "price": "$45.00",
     "specs": [
       "Size: 4mg Contents: KPV (4mg) Form: Lyophilized powder Purity: >99% SKU: P-KPV-4",
       "FREE Shipping on $200+ orders"
@@ -840,7 +840,7 @@
     "url": "https://www.corepeptides.com/peptides/ipamorelin-5mg/",
     "image": "https://www.corepeptides.com/wp-content/uploads/2020/04/Ipamorelin-5MG.jpg",
     "name": "Ipamorelin (5mg)",
-    "price": "$46.00 Original price was: $46.00.$43.00Current price is: $43.00.",
+    "price": "$46.00",
     "specs": [
       "Size: 5mg Contents: Ipamorelin (5mg) Form: Lyophilized powder Purity: >99% SKU: P-IPAMORELIN-5",
       "FREE Shipping on $200+ orders"
@@ -862,7 +862,7 @@
     "url": "https://www.corepeptides.com/peptides/hexarelin-5mg/",
     "image": "https://www.corepeptides.com/wp-content/uploads/2020/04/Hexarelin-5MG.jpg",
     "name": "Hexarelin (5mg)",
-    "price": "$57.00 Original price was: $57.00.$47.00Current price is: $47.00.",
+    "price": "$57.00",
     "specs": [
       "Size: 5mg Contents: Hexarelin (5mg) Form: Lyophilized powder Purity: >99% SKU: P-HEXARELIN-5",
       "FREE Shipping on $200+ orders"
@@ -884,7 +884,7 @@
     "url": "https://www.corepeptides.com/peptides/ghrp-6/",
     "image": "https://www.corepeptides.com/wp-content/uploads/2020/04/GHRP-6.jpg",
     "name": "GHRP-6 (5mg / 10mg)",
-    "price": "$20.00 \u2013 $29.00",
+    "price": "$20.00",
     "specs": [
       "Size: 5mg / 10mg Contents: GHRP-6 Form: Lyophilized powder Purity: >99% SKU: P-GHRP6",
       "FREE Shipping on $200+ orders"
@@ -895,7 +895,7 @@
     "url": "https://www.corepeptides.com/peptides/ghrp-2/",
     "image": "https://www.corepeptides.com/wp-content/uploads/2020/04/GHRP-2.jpg",
     "name": "GHRP-2 (5mg / 10mg)",
-    "price": "$20.00 \u2013 $29.00",
+    "price": "$20.00",
     "specs": [
       "Size: 5mg / 10mg Contents: GHRP-2 Form: Lyophilized powder Purity: >99% SKU: P-GHRP2",
       "FREE Shipping on $200+ orders"
@@ -906,7 +906,7 @@
     "url": "https://www.corepeptides.com/peptides/ghk-cu-50mg-copper/",
     "image": "https://www.corepeptides.com/wp-content/uploads/2020/04/GHK-CU-50mg.jpg",
     "name": "GHK-Cu (Copper) (50mg)",
-    "price": "$69.00 Original price was: $69.00.$58.00Current price is: $58.00.",
+    "price": "$69.00",
     "specs": [
       "Size: 50mg Contents: GHK-Cu (50mg) Form: Lyophilized powder Purity: >99% SKU: P-GHKCU-50",
       "FREE Shipping on $200+ orders"

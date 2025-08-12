@@ -11,7 +11,7 @@ const Peptides = () => {
       >
         <div className="md:w-[80%] w-[90%]  flex gap-8 lg:flex-row flex-col">
           <div className="lg:w-1/2 flex flex-col items-start justify-center gap-10 ">
-            <h1 className="text-gradient md:text-[60px] text-[40px] leading-tight lg:w-[90%] font-[700]">
+            <h1 className="text-gradient md:text-[26px] text-[20px] leading-tight lg:w-[90%] font-[700]">
               Research Peptides For Sale
             </h1>
           </div>
