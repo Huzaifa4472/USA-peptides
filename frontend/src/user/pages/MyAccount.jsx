@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { login, sendSignupLink } from "../../service/service";
 
 const MyAccount = () => {
   const navigate = useNavigate();
@@ -38,11 +38,7 @@ const MyAccount = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "https://984f868854d6.ngrok-free.app/api/v1/login",
-        { email: loginEmail, password: loginPassword },
-        { withCredentials: true }
-      );
+      const res = await login(loginEmail, loginPassword);
 
       toast.success(res.data?.message || "Login successful!", toastConfig);
 
@@ -61,10 +57,8 @@ const MyAccount = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "https://984f868854d6.ngrok-free.app/api/v1/sendSignupLink",
-        { email: registerEmail }
-      );
+      const res = await sendSignupLink(registerEmail);
+
       toast.success(res.data?.message || "Signup link sent!", toastConfig);
       setRegisterEmail("");
     } catch (err) {
