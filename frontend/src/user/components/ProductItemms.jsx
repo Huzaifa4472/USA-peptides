@@ -46,12 +46,12 @@ const ProductItemms = () => {
         <div className="md:text-[26px] text-[20px] font-[700] leading-[32px]">
           Research Peptides For Sale
         </div>
-        <div className="flex md:flex-row flex-col items-start justify-between md:w-[80%] w-[90%]  p-2 my-8">
+        <div className="flex md:flex-row flex-col items-start justify-between gap-4 md:w-[80%] w-[90%]  p-2 my-8">
           <p className="font-[600] text-[14px] leading-[26px]">
             Showing all {data.length} result
           </p>
           <select
-            className="border p-2 rounded-md"
+            className="border border-black px-2 py-1 md: text-md text-sm rounded-sm"
             value={sortOption}
             onChange={handleSortChange}
           >
