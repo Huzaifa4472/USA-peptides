@@ -3,6 +3,7 @@ import axios from "axios";
 
 const BASE_URL = "https://984f868854d6.ngrok-free.app/api/v1";
 
+//Authentication//
 export const login = (email, password) => {
   return axios.post(
     `${BASE_URL}/login`,

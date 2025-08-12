@@ -166,7 +166,7 @@ const Sidebar = ({ collapsed }) => {
           }`}
         >
           <NavLink
-            to="/admin/users"
+            to="/admin/userslist"
             className={({ isActive }) =>
               `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
             }
