@@ -5,9 +5,8 @@ import { GoVerified } from "react-icons/go";
 import Profile from "../../assets/profile.png";
 import { LiaCreditCardSolid } from "react-icons/lia";
 import { MdLogout } from "react-icons/md";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { logout } from "../../service/service";
 const Header = ({ collapsed, setCollapsed }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef();
@@ -25,12 +24,7 @@ const Header = ({ collapsed, setCollapsed }) => {
 
   const handleLogout = async () => {
     try {
-      await axios.post(
-        "https://984f868854d6.ngrok-free.app/api/v1/logout",
-        {},
-        { withCredentials: true }
-      );
-      // If you store token in localStorage, clear it here
+      const res = await logout();
       navigate("/user/accountinfo");
     } catch (error) {
       console.error("Logout failed:", error);

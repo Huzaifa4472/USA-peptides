@@ -14,3 +14,8 @@ export const login = (email, password) => {
 export const sendSignupLink = (email) => {
   return axios.post(`${BASE_URL}/sendSignupLink`, { email });
 };
+export const logout = () => {
+  return axios.post(`${BASE_URL}/logout`, {
+    withCredentials: true,
+  });
+};
