@@ -11,7 +11,8 @@ import Header from "./user/components/Header";
 import Footer from "./user/components/Footer";
 import UserRoutes from "./routes/UserRoute";
 import AdminRoutes from "./routes/AdminRoute";
-
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -42,6 +43,7 @@ function App() {
           <Route path="/admin/*" element={<AdminWrapper />} />
         </Routes>
       </LayoutWrapper>
+      <ToastContainer />
     </Router>
   );
 }

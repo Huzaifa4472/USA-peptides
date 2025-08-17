@@ -68,7 +68,7 @@ const Sidebar = ({ collapsed }) => {
             (openMenus.product ? <FaChevronUp /> : <FaChevronDown />)}
         </button>
         <div
-          className={`ml-6 overflow-hidden transition-all duration-300 ease-in-out ${
+          className={`ml-6  overflow-hidden transition-all duration-300 ease-in-out ${
             openMenus.product && !collapsed
               ? "max-h-60 opacity-100"
               : "max-h-0 opacity-0"
@@ -83,20 +83,12 @@ const Sidebar = ({ collapsed }) => {
             Add Product
           </NavLink>
           <NavLink
-            to="/admin/productslist"
+            to="/admin/products-list"
             className={({ isActive }) =>
               `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
             }
           >
-            View/Edit/Delete
-          </NavLink>
-          <NavLink
-            to="/admin/products/images"
-            className={({ isActive }) =>
-              `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
-            }
-          >
-            Manage Images
+            Product List
           </NavLink>
           <NavLink
             to="/admin/products/pricing"

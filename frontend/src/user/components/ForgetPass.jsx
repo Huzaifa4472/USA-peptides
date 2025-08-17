@@ -1,7 +1,7 @@
 const Forpass = () => {
   return (
     <div className="flex flex-col items-center justify-center ">
-      <div className="flex flex-col w-[80%] gap-4 mt-14">
+      <div className="flex flex-col w-[80%] gap-4 my-14">
         <h1 className="text-gradient text-3xl font-bold">My account</h1>
         <div className=" mt-10">
           <p className=" text-gray-600 mb-4 text-sm">

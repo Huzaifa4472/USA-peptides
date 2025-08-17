@@ -1,6 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Add this import
+import { getProductList, deleteProduct } from "../../../service/service";
+import {
+  successToast,
+  errorToast,
+  loadingToast,
+  updateToast,
+} from "../../../utils/AlertsConfig";
 
 const ProductList = () => {
+  const navigate = useNavigate(); // Add this hook
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("name");
   const [filterCategory, setFilterCategory] = useState("all");
@@ -8,97 +17,46 @@ const ProductList = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [productToDelete, setProductToDelete] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
-
-  // Sample product data
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: "Alpha-GPC 99%",
-      price: 45.99,
-      category: "Nootropics",
-      sku: "AGP-001",
-      quantity: 150,
-      image:
-        "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&h=300&fit=crop",
-      status: "In Stock",
-      purity: "99%",
-      form: "Powder",
-    },
-    {
-      id: 2,
-      name: "Lion's Mane Extract",
-      price: 32.5,
-      category: "Mushroom Extracts",
-      sku: "LME-002",
-      quantity: 89,
-      image:
-        "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=300&h=300&fit=crop",
-      status: "In Stock",
-      purity: "50:1",
-      form: "Capsules",
-    },
-    {
-      id: 3,
-      name: "Rhodiola Rosea 3%",
-      price: 28.75,
-      category: "Adaptogens",
-      sku: "RHO-003",
-      quantity: 5,
-      image:
-        "https://images.unsplash.com/photo-1471253387723-aaa001d70b7d?w=300&h=300&fit=crop",
-      status: "Low Stock",
-      purity: "3% Rosavins",
-      form: "Powder",
-    },
-    {
-      id: 4,
-      name: "Ashwagandha KSM-66",
-      price: 39.99,
-      category: "Adaptogens",
-      sku: "ASH-004",
-      quantity: 0,
-      image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=300&fit=crop",
-      status: "Out of Stock",
-      purity: "KSM-66",
-      form: "Capsules",
-    },
-    {
-      id: 5,
-      name: "Bacopa Monnieri 50%",
-      price: 24.99,
-      category: "Nootropics",
-      sku: "BAC-005",
-      quantity: 200,
-      image:
-        "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=300&h=300&fit=crop",
-      status: "In Stock",
-      purity: "50% Bacosides",
-      form: "Powder",
-    },
-    {
-      id: 6,
-      name: "Cordyceps Militaris",
-      price: 55.0,
-      category: "Mushroom Extracts",
-      sku: "COR-006",
-      quantity: 75,
-      image:
-        "https://images.unsplash.com/photo-1607624833508-b8b8e51a2c62?w=300&h=300&fit=crop",
-      status: "In Stock",
-      purity: "30% Polysaccharides",
-      form: "Powder",
-    },
-  ]);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const productsPerPage = 6;
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await getProductList();
+      if (response.data && response.data.success) {
+        setProducts(response.data.data || []);
+      } else {
+        throw new Error(response.data?.message || "Failed to fetch products");
+      }
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      setError(
+        error.response?.data?.message ||
+          error.message ||
+          "Failed to load products"
+      );
+      errorToast(error.response?.data?.message || "Failed to load products");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Filter and sort products
   const filteredProducts = products
     .filter((product) => {
       const matchesSearch =
-        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.sku.toLowerCase().includes(searchTerm.toLowerCase());
+        product.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.sku?.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory =
         filterCategory === "all" || product.category === filterCategory;
       return matchesSearch && matchesCategory;
@@ -106,11 +64,11 @@ const ProductList = () => {
     .sort((a, b) => {
       switch (sortBy) {
         case "name":
-          return a.name.localeCompare(b.name);
+          return a.name?.localeCompare(b.name) || 0;
         case "price":
-          return a.price - b.price;
+          return (a.price || 0) - (b.price || 0);
         case "quantity":
-          return b.quantity - a.quantity;
+          return (b.quantity || 0) - (a.quantity || 0);
         default:
           return 0;
       }
@@ -125,14 +83,20 @@ const ProductList = () => {
   );
 
   // Get unique categories
-  const categories = ["all", ...new Set(products.map((p) => p.category))];
+  const categories = [
+    "all",
+    ...new Set(products.map((p) => p.category).filter(Boolean)),
+  ];
 
-  const handleEdit = (productId) => {
-    console.log("Edit product:", productId);
-    // This will be implemented later - for now just log
-    alert(
-      `Edit functionality for product ID: ${productId} will be implemented soon!`
-    );
+  // Updated handleEdit function to navigate with product data
+  const handleEdit = (product) => {
+    // Navigate to add product page with edit mode and product data
+    navigate("/admin/products/add", {
+      state: {
+        isEdit: true,
+        productData: product,
+      },
+    });
   };
 
   const handleDeleteClick = (product) => {
@@ -147,18 +111,42 @@ const ProductList = () => {
       setShowDeleteModal(false);
       setIsClosing(false);
       setProductToDelete(null);
-    }, 200); // Match animation duration
+    }, 200);
   };
 
-  const handleDeleteConfirm = () => {
-    if (productToDelete) {
-      setProducts(products.filter((p) => p.id !== productToDelete.id));
+  const handleDeleteConfirm = async () => {
+    if (!productToDelete) return;
+    const productId = productToDelete._id || productToDelete.id;
+    const deleteToastId = loadingToast("Deleting product...");
+
+    try {
+      const response = await deleteProduct(productId);
+
+      if (response.data && response.data.success) {
+        setProducts(
+          products.filter(
+            (p) =>
+              (p._id || p.id) !== (productToDelete._id || productToDelete.id)
+          )
+        );
+        updateToast(deleteToastId, "success", "Product deleted successfully!");
+      } else {
+        throw new Error(response.data?.message || "Failed to delete product");
+      }
+    } catch (error) {
+      console.error("Error deleting product:", error);
+      updateToast(
+        deleteToastId,
+        "error",
+        error.response?.data?.message || "Failed to delete product"
+      );
+    } finally {
       setIsClosing(true);
       setTimeout(() => {
         setShowDeleteModal(false);
         setIsClosing(false);
         setProductToDelete(null);
-      }, 200); // Match animation duration
+      }, 200);
     }
   };
 
@@ -175,8 +163,74 @@ const ProductList = () => {
     }
   };
 
+  const getProductStatus = (quantity) => {
+    if (quantity === 0) return "Out of Stock";
+    if (quantity <= 10) return "Low Stock";
+    return "In Stock";
+  };
+
+  // Loading State
+  if (loading) {
+    return (
+      <div className="p-6 min-h-screen">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            Product Management
+          </h1>
+          <p className="text-gray-600">Loading products...</p>
+        </div>
+        <div className="flex justify-center items-center h-64">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+        </div>
+      </div>
+    );
+  }
+
+  // Error State
+  if (error && !products.length) {
+    return (
+      <div className="p-6 min-h-screen">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            Product Management
+          </h1>
+          <p className="text-gray-600">
+            Manage your product inventory and details
+          </p>
+        </div>
+        <div className="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
+          <div className="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
+            <svg
+              className="w-8 h-8 text-red-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <h3 className="text-lg font-semibold text-red-800 mb-2">
+            Failed to Load Products
+          </h3>
+          <p className="text-red-600 mb-4">{error}</p>
+          <button
+            onClick={fetchProducts}
+            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="p-6  min-h-screen">
+    <div className="p-6 min-h-screen">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">
@@ -185,6 +239,12 @@ const ProductList = () => {
         <p className="text-gray-600">
           Manage your product inventory and details
         </p>
+        <button
+          onClick={fetchProducts}
+          className="mt-2 text-sm bg-blue-100 hover:bg-blue-200 text-blue-700 px-3 py-1 rounded-lg transition-colors duration-200"
+        >
+          Refresh Products
+        </button>
       </div>
 
       {/* Filters and Search */}
@@ -252,115 +312,126 @@ const ProductList = () => {
 
       {/* Product Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        {currentProducts.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300"
-          >
-            {/* Product Image */}
-            <div className="h-48 bg-gray-100 overflow-hidden">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
-            {/* Product Details */}
-            <div className="p-6">
-              <div className="flex items-start justify-between mb-2">
-                <h3 className="text-lg font-semibold text-gray-800 line-clamp-1">
-                  {product.name}
-                </h3>
-                <span
-                  className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(
-                    product.status
-                  )}`}
-                >
-                  {product.status}
-                </span>
+        {currentProducts.map((product) => {
+          const status = getProductStatus(product.quantity);
+          return (
+            <div
+              key={product.id}
+              className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300"
+            >
+              {/* Product Image */}
+              <div className="h-48 bg-gray-100 overflow-hidden">
+                <img
+                  src={product.productImage}
+                  alt={product.name}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    e.target.src =
+                      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&h=300&fit=crop";
+                  }}
+                />
               </div>
 
-              <p className="text-sm text-gray-600 mb-3">SKU: {product.sku}</p>
-
-              <div className="space-y-2 mb-4">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Price:</span>
-                  <span className="font-semibold text-blue-600">
-                    ${product.price}
-                  </span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Stock:</span>
+              {/* Product Details */}
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-gray-800 line-clamp-1">
+                    {product.name}
+                  </h3>
                   <span
-                    className={`font-medium ${
-                      product.quantity > 10
-                        ? "text-green-600"
-                        : product.quantity > 0
-                        ? "text-yellow-600"
-                        : "text-red-600"
-                    }`}
+                    className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(
+                      status
+                    )}`}
                   >
-                    {product.quantity} units
+                    {status}
                   </span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Purity:</span>
-                  <span className="text-gray-800">{product.purity}</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Form:</span>
-                  <span className="text-gray-800">{product.form}</span>
-                </div>
-              </div>
 
-              <div className="flex gap-2">
-                <button
-                  onClick={() => handleEdit(product.id)}
-                  className="flex-1 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2"
-                >
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                <p className="text-sm text-gray-600 mb-3">SKU: {product.sku}</p>
+
+                <div className="space-y-2 mb-4">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-600">Price:</span>
+                    <span className="font-semibold text-blue-600">
+                      ${product.price || "N/A"}
+                    </span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-600">Stock:</span>
+                    <span
+                      className={`font-medium ${
+                        (product.quantity || 0) > 10
+                          ? "text-green-600"
+                          : (product.quantity || 0) > 0
+                          ? "text-yellow-600"
+                          : "text-red-600"
+                      }`}
+                    >
+                      {product.quantity || 0} units
+                    </span>
+                  </div>
+                  {product.purity && (
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">Purity:</span>
+                      <span className="text-gray-800">{product.purity}</span>
+                    </div>
+                  )}
+                  {product.form && (
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">Form:</span>
+                      <span className="text-gray-800">{product.form}</span>
+                    </div>
+                  )}
+                </div>
+
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => handleEdit(product)}
+                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                    />
-                  </svg>
-                  Edit
-                </button>
-                <button
-                  onClick={() => handleDeleteClick(product)}
-                  className="flex-1 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2"
-                >
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                      />
+                    </svg>
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDeleteClick(product)}
+                    className="flex-1 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                    />
-                  </svg>
-                  Delete
-                </button>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                      />
+                    </svg>
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Empty State */}
-      {currentProducts.length === 0 && (
+      {currentProducts.length === 0 && !loading && (
         <div className="text-center py-12">
           <div className="w-24 h-24 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
             <svg

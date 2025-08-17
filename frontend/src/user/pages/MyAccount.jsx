@@ -167,7 +167,10 @@ const MyAccount = () => {
                 Your personal data will be used to support your experience
                 throughout this website, to manage access to your account, and
                 for other purposes described in our{" "}
-                <a href="/" className="text-[#CC3882] font-medium">
+                <a
+                  href="/user/privacy-policy"
+                  className="text-[#CC3882] font-medium"
+                >
                   privacy policy
                 </a>
                 .

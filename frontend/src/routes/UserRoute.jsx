@@ -11,6 +11,7 @@ import PrivacyPolicy from "../user/pages/PrivacyPolicy";
 import TermsCondition from "../user/pages/TermsCondition";
 import ShippingRefund from "../user/pages/ShippingRefund";
 import SearchResult from "../user/components/SearchResult";
+import SetUpPassword from "../user/components/SetUpPassword";
 
 const userRoutes = [
   <Route key="home" path="" element={<Home />} />,
@@ -23,11 +24,15 @@ const userRoutes = [
     path="my-accounts/forget-password"
     element={<ForgetPass />}
   />,
+  <Route
+    key="setup-password"
+    path="my-accounts/setup-password/:token/:email"
+    element={<SetUpPassword />}
+  />,
   <Route key="privacy" path="privacy-policy" element={<PrivacyPolicy />} />,
   <Route key="terms" path="terms-condition" element={<TermsCondition />} />,
   <Route key="shipping" path="shipping" element={<ShippingRefund />} />,
-  <Route key="result" path="result-search" element={<SearchResult />} />
-
+  <Route key="result" path="result-search" element={<SearchResult />} />,
 ];
 
 export default userRoutes;
