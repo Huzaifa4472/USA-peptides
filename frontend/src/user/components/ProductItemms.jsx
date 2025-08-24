@@ -1,57 +1,125 @@
-import React, { useState } from "react";
-import data from "../../data.json"; // Assuming you have a products data file
-const ProductItemms = () => {
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { getProductList } from "../../service/service"; // Import your API service
+
+const ProductItems = () => {
+  const navigate = useNavigate();
   const [sortOption, setSortOption] = useState("Sort by popularity");
-  const [products, setProducts] = useState([...data]);
+  const [products, setProducts] = useState([]);
+  const [originalProducts, setOriginalProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        const response = await getProductList();
+        const productsData = response.data.data || response.data;
+        setProducts(productsData);
+        setOriginalProducts(productsData);
+        setError(null);
+      } catch (err) {
+        console.error("Error fetching products:", err);
+        setError("Failed to load products. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   const handleSortChange = (e) => {
     const value = e.target.value;
     setSortOption(value);
 
-    let sortedProducts = [...data];
+    let sortedProducts = [...originalProducts];
 
     switch (value) {
-      // case "Sort by latest":
-      //   sortedProducts.sort((a, b) => new Date(b.date) - new Date(a.date));
-      //   break;
       case "Sort by price: low to high":
-        sortedProducts.sort(
-          (a, b) =>
-            parseFloat(a.price.replace(/[^0-9.]/g, "")) -
-            parseFloat(b.price.replace(/[^0-9.]/g, ""))
-        );
+        sortedProducts.sort((a, b) => {
+          const priceA =
+            parseFloat(a.price?.toString().replace(/[^0-9.]/g, "")) || 0;
+          const priceB =
+            parseFloat(b.price?.toString().replace(/[^0-9.]/g, "")) || 0;
+          return priceA - priceB;
+        });
         break;
       case "Sort by price: high to low":
-        sortedProducts.sort(
-          (a, b) =>
-            parseFloat(b.price.replace(/[^0-9.]/g, "")) -
-            parseFloat(a.price.replace(/[^0-9.]/g, ""))
-        );
+        sortedProducts.sort((a, b) => {
+          const priceA =
+            parseFloat(a.price?.toString().replace(/[^0-9.]/g, "")) || 0;
+          const priceB =
+            parseFloat(b.price?.toString().replace(/[^0-9.]/g, "")) || 0;
+          return priceB - priceA;
+        });
         break;
       case "Sort by title: (A-Z)":
-        sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+        sortedProducts.sort((a, b) =>
+          (a.name || "").localeCompare(b.name || "")
+        );
         break;
       case "Sort by title: (Z-A)":
-        sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
+        sortedProducts.sort((a, b) =>
+          (b.name || "").localeCompare(a.name || "")
+        );
+        break;
+      case "Sort by latest":
+        sortedProducts.sort((a, b) => {
+          const dateA = new Date(a.createdAt || a.dateAdded || 0);
+          const dateB = new Date(b.createdAt || b.dateAdded || 0);
+          return dateB - dateA;
+        });
         break;
       default:
-        sortedProducts = [...data];
+        sortedProducts = [...originalProducts];
     }
 
     setProducts(sortedProducts);
   };
+
+  const handleProductClick = (product) => {
+    const productName =
+      product.name
+        ?.toLowerCase()
+        .replace(/[^a-z0-9]/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, "") || "product";
+
+    navigate(`/user/peptides/${productName}`, {
+      state: { product },
+    });
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center my-16">
+        <div className="text-lg">Loading products...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center my-16">
+        <div className="text-red-500 text-lg">{error}</div>
+      </div>
+    );
+  }
+
   return (
-    <div className="flex items-center justify-center my-16 ">
+    <div className="flex items-center justify-center my-16">
       <div className="flex flex-col items-center w-[100%]">
         <div className="md:text-[26px] text-[20px] font-[700] leading-[32px]">
           Research Peptides For Sale
         </div>
-        <div className="flex md:flex-row flex-col items-start justify-between gap-4 md:w-[80%] w-[90%]  p-2 my-8">
+        <div className="flex md:flex-row flex-col items-start justify-between gap-4 md:w-[80%] w-[90%] p-2 my-8">
           <p className="font-[600] text-[14px] leading-[26px]">
-            Showing all {data.length} result
+            Showing all {products.length} results
           </p>
           <select
-            className="border border-black px-2 py-1 md: text-md text-sm rounded-sm"
+            className="border border-black px-2 py-1 md:text-md text-sm rounded-sm"
             value={sortOption}
             onChange={handleSortChange}
           >
@@ -65,31 +133,55 @@ const ProductItemms = () => {
         </div>
         <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-[80%] gap-6">
           {products.map((product) => (
-            <div key={product.id} className=" p-4 hover:shadow-lg transition">
-              <a
-                href={product.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center"
-              >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full md:h-62  object-contain mb-4"
-                />
-                <h2 className="text-[15px] font-[600] leading-[20px] text-center">
-                  {product.name}
+            <div
+              key={product.id || product._id}
+              className="p-4 hover:shadow-lg transition relative cursor-pointer"
+              onClick={() => handleProductClick(product)}
+            >
+              {(product.stock === 0 || product.quantity === 0) && (
+                <div className="absolute top-2 left-0 bg-primary text-white  px-4 py-2 rounded-md z-10">
+                  Out of Stock
+                </div>
+              )}
+              <div className="flex flex-col items-center">
+                <div className="relative w-full">
+                  <img
+                    src={
+                      product.productImage ||
+                      product.imageUrl ||
+                      "/placeholder-image.jpg"
+                    }
+                    alt={product.name || "Product"}
+                    className="w-full md:h-62 object-contain mb-4"
+                    onError={(e) => {
+                      e.target.src = "/placeholder-image.jpg";
+                    }}
+                  />
+                  {(product.stock === 0 || product.quantity === 0) && (
+                    <div className="absolute inset-0 bg-gray-200 opacity-50 mb-4"></div>
+                  )}
+                </div>
+
+                <h2 className="text-[15px] font-[600] leading-[20px] text-center mb-2">
+                  {product.name || "Unnamed Product"}
                 </h2>
+
                 <p className="text-[#cc3882] font-[600] text-[16px] leading-[26px]">
-                  {product.price}
+                  ${product.price}.00
                 </p>
-              </a>
+              </div>
             </div>
           ))}
         </div>
+
+        {products.length === 0 && !loading && (
+          <div className="text-center py-8">
+            <p className="text-gray-500">No products found.</p>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default ProductItemms;
+export default ProductItems;

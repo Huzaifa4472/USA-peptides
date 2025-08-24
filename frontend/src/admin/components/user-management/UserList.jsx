@@ -146,7 +146,7 @@ const UserList = () => {
           <input
             type="text"
             placeholder="Search users..."
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-[100%] pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -154,7 +154,7 @@ const UserList = () => {
 
         {/* Status Filter */}
         <select
-          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="px-3 w-[20%] py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value)}
         >
@@ -165,7 +165,7 @@ const UserList = () => {
 
         {/* Role Filter */}
         <select
-          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="px-3 py-2 w-[20%] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           value={roleFilter}
           onChange={(e) => setRoleFilter(e.target.value)}
         >

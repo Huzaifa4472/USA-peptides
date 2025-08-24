@@ -34,6 +34,7 @@ const AddProduct = () => {
     form: "",
     purity: "",
     sku: "",
+    stock: "",
     certificate: null,
     hplc: null,
     massSpectrometry: null,
@@ -63,6 +64,7 @@ const AddProduct = () => {
         form: productData.form || "",
         purity: productData.purity || "",
         sku: productData.sku || "",
+        stock: productData.stock || "",
         certificate: null,
         hplc: null,
         massSpectrometry: null,
@@ -136,6 +138,7 @@ const AddProduct = () => {
       form: "",
       purity: "",
       sku: "",
+      stock: "",
       certificate: null,
       hplc: null,
       massSpectrometry: null,
@@ -246,7 +249,7 @@ const AddProduct = () => {
         updateToast(loadingToastId, "success", "Product updated successfully!");
 
         // Navigate back to product list after successful update
-        navigate("/product-list");
+        navigate("/admin/products-list");
       } else {
         // Call create API
         await addProduct(submitFormData);
@@ -459,7 +462,6 @@ const AddProduct = () => {
 
   return (
     <div className="p-6 text-gray-700">
-      {/* Header with edit mode indicator */}
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-2xl font-bold">
@@ -551,6 +553,7 @@ const AddProduct = () => {
               { label: "Form", name: "form", type: "text" },
               { label: "Purity", name: "purity", type: "text" },
               { label: "SKU", name: "sku", type: "text" },
+              { label: "Stock", name: "stock", type: "number" },
             ].map((field, i) => (
               <div key={i}>
                 <label className="block text-secondary font-medium mb-1">

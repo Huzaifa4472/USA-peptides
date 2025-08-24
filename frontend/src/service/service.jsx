@@ -56,3 +56,16 @@ export const updateProduct = (productId, formData) => {
     withCredentials: true,
   });
 };
+export const getProductSummary = () => {
+  return axios.get(`${BASE_URL}/productSummary`, {
+    withCredentials: true,
+  });
+};
+export const updatePriceAndStock = (productId, updateData) => {
+  return axios.patch(`${BASE_URL}/updatePriceStock/${productId}`, updateData, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: true,
+  });
+};

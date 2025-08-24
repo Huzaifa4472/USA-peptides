@@ -12,12 +12,19 @@ import TermsCondition from "../user/pages/TermsCondition";
 import ShippingRefund from "../user/pages/ShippingRefund";
 import SearchResult from "../user/components/SearchResult";
 import SetUpPassword from "../user/components/SetUpPassword";
+import ProductDetails from "../user/components/ProductDetails";
 
 const userRoutes = [
   <Route key="home" path="" element={<Home />} />,
   <Route key="about-us" path="about-us" element={<AboutUs />} />,
   <Route key="contact" path="contact" element={<Contact />} />,
-  <Route key="peptides" path="peptides" element={<Peptides />} />,
+  // Define peptides routes separately
+  <Route key="peptides-main" path="peptides" element={<Peptides />} />,
+  <Route
+    key="peptides-detail"
+    path="peptides/:productName"
+    element={<ProductDetails />}
+  />,
   <Route key="my-accounts" path="my-accounts" element={<MyAccount />} />,
   <Route
     key="forget-password"

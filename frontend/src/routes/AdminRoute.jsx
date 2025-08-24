@@ -6,11 +6,13 @@ import DashboardComponent from "../admin/components/Dashboard/DashboardComponent
 import AddProduct from "../admin/components/Product/AddProduct";
 import ProductList from "../admin/components/Product/ProductList";
 import UserList from "../admin/components/user-management/UserList";
+import PriceStocks from "../admin/components/Product/PriceStocks";
 const adminRoutes = [
   <Route key="layout" element={<Layout />}>
     <Route path="dashboard" element={<DashboardComponent />} />
     <Route path="products/add" element={<AddProduct />} />
     <Route path="products-list" element={<ProductList />} />
+    <Route path="/products/pricing" element={<PriceStocks />} />
     <Route path="userslist" element={<UserList />} />
   </Route>,
 ];

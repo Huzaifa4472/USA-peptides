@@ -347,9 +347,15 @@ const ProductList = () => {
                   </span>
                 </div>
 
-                <p className="text-sm text-gray-600 mb-3">SKU: {product.sku}</p>
-
                 <div className="space-y-2 mb-4">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-600">SKU:</span>
+                    <span className=" ">{product.sku}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-600">Size:</span>
+                    <span className=" ">{product.size}</span>
+                  </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Price:</span>
                     <span className="font-semibold text-blue-600">
@@ -360,14 +366,14 @@ const ProductList = () => {
                     <span className="text-gray-600">Stock:</span>
                     <span
                       className={`font-medium ${
-                        (product.quantity || 0) > 10
+                        (product.stock || 0) > 10
                           ? "text-green-600"
-                          : (product.quantity || 0) > 0
+                          : (product.stock || 0) > 0
                           ? "text-yellow-600"
                           : "text-red-600"
                       }`}
                     >
-                      {product.quantity || 0} units
+                      {product.stock || 0} units
                     </span>
                   </div>
                   {product.purity && (
