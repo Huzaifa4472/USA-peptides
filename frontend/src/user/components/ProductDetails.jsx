@@ -31,19 +31,29 @@ const ProductDetails = () => {
   };
 
   const handleAddToCart = () => {
-    // Add your cart logic here
-    console.log(`Adding ${quantity} of ${product.name} to cart`);
+    if (product && window.addToCart) {
+      // Create a product object compatible with the cart
+      const cartProduct = {
+        id: product.id || product._id || Date.now(), // Ensure there's an ID
+        name: product.name,
+        price: product.price,
+        productImage: product.productImage || product.imageUrl,
+        imageUrl: product.imageUrl || product.productImage,
+      };
+
+      // Call the global addToCart function from Header
+      window.addToCart(cartProduct, quantity);
+
+      console.log(`Added ${quantity} of ${product.name} to cart`);
+
+      // Reset quantity after adding to cart
+      setQuantity(1);
+    } else {
+      console.log("Product data or addToCart function not available");
+    }
   };
 
   const isOutOfStock = product && product.stock === 0;
-
-  // const tabs = [
-  //   { id: "description", label: "Description" },
-  //   { id: "certificate", label: "Certificate of Analysis" },
-  //   { id: "hplc", label: "HPLC" },
-  //   { id: "mass", label: "Mass Spectrometry" },
-  // ];
-  // Inside ProductDetails component
 
   const tabs = [
     { id: "description", label: "Description" },

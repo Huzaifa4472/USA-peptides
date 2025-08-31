@@ -177,14 +177,14 @@ const Sidebar = ({ collapsed }) => {
       </div>
 
       {/* Category & Tag Management */}
-      <NavLink
+      {/* <NavLink
         to="/admin/categories"
         className={({ isActive }) =>
           `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
         }
       >
         {menuItem(<FaTags />, "Category & Tag Management")}
-      </NavLink>
+      </NavLink> */}
     </div>
   );
 };

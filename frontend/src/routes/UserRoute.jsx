@@ -33,7 +33,7 @@ const userRoutes = [
   />,
   <Route
     key="setup-password"
-    path="my-accounts/setup-password/:token/:email"
+    path="my-accounts/setup-password"
     element={<SetUpPassword />}
   />,
   <Route key="privacy" path="privacy-policy" element={<PrivacyPolicy />} />,

@@ -7,6 +7,7 @@ import AddProduct from "../admin/components/Product/AddProduct";
 import ProductList from "../admin/components/Product/ProductList";
 import UserList from "../admin/components/user-management/UserList";
 import PriceStocks from "../admin/components/Product/PriceStocks";
+import OrdersManagement from "../admin/components/Orders/OrdersManagement";
 const adminRoutes = [
   <Route key="layout" element={<Layout />}>
     <Route path="dashboard" element={<DashboardComponent />} />
@@ -14,6 +15,7 @@ const adminRoutes = [
     <Route path="products-list" element={<ProductList />} />
     <Route path="/products/pricing" element={<PriceStocks />} />
     <Route path="userslist" element={<UserList />} />
+    <Route path="orders" element={<OrdersManagement />} />
   </Route>,
 ];
 
