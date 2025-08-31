@@ -71,8 +71,8 @@ const AddProduct = () => {
       });
 
       // Set description
-      setDescription(productData.description || "");
-
+      const descriptionText = productData.tabs?.description?.[0]?.text || "";
+      setDescription(descriptionText);
       // Set product image preview if exists
       if (productData.productImage) {
         setProductImagePreview(productData.productImage);

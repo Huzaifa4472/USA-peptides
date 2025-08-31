@@ -69,3 +69,8 @@ export const updatePriceAndStock = (productId, updateData) => {
     withCredentials: true,
   });
 };
+
+// Contact API
+export const submitContactForm = (contactData) => {
+  return axios.post(`${BASE_URL}/contact`, contactData);
+};

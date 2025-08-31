@@ -3,14 +3,12 @@ import {
   Search,
   ChevronLeft,
   ChevronRight,
-  Filter,
   Loader2,
   ChevronDown,
   ChevronUp,
   Edit3,
   Check,
   X,
-  DollarSign,
   Package,
   Tag,
 } from "lucide-react";
@@ -18,12 +16,7 @@ import {
   getProductSummary,
   updatePriceAndStock,
 } from "../../../service/service";
-import {
-  successToast,
-  errorToast,
-  loadingToast,
-  updateToast,
-} from "../../../utils/AlertsConfig";
+import { loadingToast, updateToast } from "../../../utils/AlertsConfig";
 
 const ProductPricingStock = () => {
   const [searchTerm, setSearchTerm] = useState("");

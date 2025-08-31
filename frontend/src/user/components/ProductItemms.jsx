@@ -16,8 +16,12 @@ const ProductItems = () => {
         setLoading(true);
         const response = await getProductList();
         const productsData = response.data.data || response.data;
-        setProducts(productsData);
-        setOriginalProducts(productsData);
+        const sortedByAZ = [...productsData].sort((a, b) =>
+          (a.name || "").localeCompare(b.name || "")
+        );
+        setProducts(sortedByAZ);
+        setOriginalProducts(sortedByAZ);
+        setSortOption("Sort by title: (A-Z)");
         setError(null);
       } catch (err) {
         console.error("Error fetching products:", err);
@@ -131,7 +135,7 @@ const ProductItems = () => {
             <option>Sort by title: (Z-A)</option>
           </select>
         </div>
-        <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-[80%] gap-6">
+        <div className="md:p-4 p-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:w-[80%] w-[90%] md:gap-6 gap-3">
           {products.map((product) => (
             <div
               key={product.id || product._id}

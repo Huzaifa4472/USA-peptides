@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Add this import
 import { getProductList, deleteProduct } from "../../../service/service";
 import {
-  successToast,
   errorToast,
   loadingToast,
   updateToast,

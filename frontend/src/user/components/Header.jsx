@@ -32,7 +32,7 @@ const Header = () => {
   }, [searchQuery]);
 
   return (
-    <div className="bg-black text-white sticky top-0 z-50">
+    <div className="bg-black text-white sticky top-0 z-[999999]">
       <div className="md:w-[80%] w-[90%] mx-auto flex items-center justify-between md:py-3 py-3">
         <NavLink to="/user">
           <img src={Logo} alt="Logo" className="md:w-32 w-24" />

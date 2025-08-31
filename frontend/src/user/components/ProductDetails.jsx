@@ -37,18 +37,29 @@ const ProductDetails = () => {
 
   const isOutOfStock = product && product.stock === 0;
 
+  // const tabs = [
+  //   { id: "description", label: "Description" },
+  //   { id: "certificate", label: "Certificate of Analysis" },
+  //   { id: "hplc", label: "HPLC" },
+  //   { id: "mass", label: "Mass Spectrometry" },
+  // ];
+  // Inside ProductDetails component
+
   const tabs = [
     { id: "description", label: "Description" },
-    { id: "certificate", label: "Certificate of Analysis" },
-    { id: "hplc", label: "HPLC" },
-    { id: "mass", label: "Mass Spectrometry" },
-  ];
+    product?.tabs?.certificate?.[0]?.url && {
+      id: "certificate",
+      label: "Certificate of Analysis",
+    },
+    product?.tabs?.hplc?.[0]?.url && { id: "hplc", label: "HPLC" },
+    product?.tabs?.mass?.[0]?.url && { id: "mass", label: "Mass Spectrometry" },
+  ].filter(Boolean);
 
   return (
-    <div className="flex flex-col items-center my-16">
+    <div className="flex flex-col items-center my-16 text-[#666]">
       <div className="md:w-[80%] w-[90%]">
         {!product ? (
-          <p className="text-center text-gray-500">Loading product...</p>
+          <p className="text-center ">Loading product...</p>
         ) : (
           <>
             <button
@@ -92,31 +103,31 @@ const ProductDetails = () => {
 
                 <div>
                   <div className="flex items-center space-x-2">
-                    <span className="font-semibold">Size:</span>
+                    <span>Size:</span>
                     <span className="px-2 py-1 rounded text-sm">
                       {product.size}
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="font-semibold">Contents:</span>
+                    <span>Contents:</span>
                     <span className="px-2 py-1 rounded text-sm">
                       {product.contents}
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="font-semibold">Form:</span>
+                    <span>Form:</span>
                     <span className="px-2 py-1 rounded text-sm">
                       {product.form}
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="font-semibold">Purity:</span>
+                    <span>Purity:</span>
                     <span className="px-2 py-1 rounded text-sm">
                       {product.purity}
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="font-semibold">SKU:</span>
+                    <span>SKU:</span>
                     <span className="px-2 py-1 rounded text-sm">
                       {product.sku}
                     </span>
@@ -179,16 +190,16 @@ const ProductDetails = () => {
                         <button
                           onClick={() => handleQuantityChange("decrease")}
                           disabled={quantity <= 1}
-                          className="p-2  disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="md:p-2 p-1  disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           <Minus size={16} />
                         </button>
-                        <span className="px-4 py-2 min-w-[60px] text-center border-x-2 border-primary">
+                        <span className="md:px-4 px-2 md:py-2 py-1 min-w-[60px] text-center border-x-2 border-primary">
                           {quantity}
                         </span>
                         <button
                           onClick={() => handleQuantityChange("increase")}
-                          className="p-2 "
+                          className="md:p-2 p-1 "
                         >
                           <Plus size={16} />
                         </button>
@@ -197,7 +208,7 @@ const ProductDetails = () => {
                       {/* Add to Cart Button */}
                       <button
                         onClick={handleAddToCart}
-                        className=" py-2 px-6 hover:bg-[#cc3882] text-[#cc3882] border-2 border-[#cc3882] hover:text-white rounded-full font-semibold bg-transparent transition"
+                        className=" py-2 md:px-6 px-3 hover:bg-[#cc3882] text-[#cc3882] border-2 border-[#cc3882] hover:text-white md:text-lg text-sm rounded-full font-semibold bg-transparent transition"
                       >
                         ADD TO CART
                       </button>
@@ -208,7 +219,7 @@ const ProductDetails = () => {
             </div>
 
             <div className="mt-12">
-              <div className="flex border-b border-gray-300">
+              <div className="flex md:flex-row flex-col border-b border-gray-300">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
@@ -228,7 +239,7 @@ const ProductDetails = () => {
               <div className="py-6">
                 {activeTab === "description" && (
                   <div
-                    className="prose prose-sm max-w-none [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mb-4 [&_h2]:text-gray-800 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mb-3 [&_h3]:text-gray-700 [&_p]:mb-4 [&_p]:text-gray-600 [&_p]:leading-relaxed [&_ul]:mb-4 [&_ul]:ml-6 [&_li]:mb-2 [&_li]:text-gray-600 [&_ol]:mb-4 [&_ol]:ml-6 [&_a]:text-blue-600 [&_a]:underline [&_strong]:font-bold [&_em]:italic"
+                    className="prose prose-sm max-w-full overflow-hidden break-words [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mb-4 [&_h2]:text-gray-800 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mb-3 [&_h3]:text-gray-700 [&_p]:mb-4 [&_p]:text-gray-600 [&_p]:leading-relaxed [&_ul]:mb-4 [&_ul]:ml-6 [&_li]:mb-2 [&_li]:text-gray-600 [&_ol]:mb-4 [&_ol]:ml-6 [&_a]:text-blue-600 [&_a]:underline [&_strong]:font-bold [&_em]:italic"
                     dangerouslySetInnerHTML={{
                       __html: product.tabs.description[0].text,
                     }}
