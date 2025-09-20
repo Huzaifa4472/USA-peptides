@@ -86,15 +86,22 @@ const AddProduct = () => {
 
       // Set sales offers if they exist
       if (productData.discounts && Array.isArray(productData.discounts)) {
-        const offers = productData.discounts.map((discount) => ({
-          qtyRange: `${discount.minQuantity} - ${discount.maxQuantity}`,
-          discount: `${discount.discountPercent}%`,
-          finalPrice: `$${(
-            productData.price *
-            discount.minQuantity *
-            (1 - discount.discountPercent / 100)
-          ).toFixed(2)}`,
-        }));
+        const offers = productData.discounts.map((discount) => {
+          // Handle both range and 9+ style offers
+          const qtyRange = discount.maxQuantity
+            ? `${discount.minQuantity} - ${discount.maxQuantity}`
+            : `${discount.minQuantity}+`;
+
+          return {
+            qtyRange,
+            discount: `${discount.discountPercent}%`,
+            finalPrice: `$${(
+              productData.price *
+              discount.minQuantity *
+              (1 - discount.discountPercent / 100)
+            ).toFixed(2)}`,
+          };
+        });
         setSalesOffers(offers);
       }
     }
@@ -193,11 +200,25 @@ const AddProduct = () => {
       }
 
       if (salesOffers.length > 0) {
-        const discounts = salesOffers.map((offer) => ({
-          minQuantity: parseInt(offer.qtyRange.split(" - ")[0]),
-          maxQuantity: parseInt(offer.qtyRange.split(" - ")[1]),
-          discountPercent: parseFloat(offer.discount.replace("%", "")),
-        }));
+        const discounts = salesOffers.map((offer) => {
+          // Handle both range and 9+ style offers
+          if (offer.qtyRange.includes("+")) {
+            // For 9+ style offers, maxQuantity is null or undefined
+            const minQuantity = parseInt(offer.qtyRange.replace("+", ""));
+            return {
+              minQuantity,
+              maxQuantity: null, // or undefined
+              discountPercent: parseFloat(offer.discount.replace("%", "")),
+            };
+          } else {
+            // For range offers like "5 - 10"
+            return {
+              minQuantity: parseInt(offer.qtyRange.split(" - ")[0]),
+              maxQuantity: parseInt(offer.qtyRange.split(" - ")[1]),
+              discountPercent: parseFloat(offer.discount.replace("%", "")),
+            };
+          }
+        });
         submitFormData.append("discounts", JSON.stringify(discounts));
       }
     }
@@ -285,8 +306,9 @@ const AddProduct = () => {
   };
 
   const addOffer = () => {
-    if (!offerInput.minQty || !offerInput.maxQty || !offerInput.discount) {
-      warningToast("Please fill in all offer fields");
+    // Updated validation - only minQty and discount are required
+    if (!offerInput.minQty || !offerInput.discount) {
+      warningToast("Please fill in minimum quantity and discount fields");
       return;
     }
 
@@ -296,10 +318,15 @@ const AddProduct = () => {
     const discountedPrice =
       totalPrice - totalPrice * (parseFloat(offerInput.discount) / 100);
 
+    // Create quantity range based on whether maxQty is provided
+    const qtyRange = offerInput.maxQty
+      ? `${offerInput.minQty} - ${offerInput.maxQty}`
+      : `${offerInput.minQty}+`;
+
     setSalesOffers([
       ...salesOffers,
       {
-        qtyRange: `${offerInput.minQty} - ${offerInput.maxQty}`,
+        qtyRange,
         discount: `${offerInput.discount}%`,
         finalPrice: `${discountedPrice.toFixed(2)}`,
       },

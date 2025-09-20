@@ -333,8 +333,8 @@ const ProductList = () => {
 
               {/* Product Details */}
               <div className="p-6">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-gray-800 line-clamp-1">
+                <div className="flex flex-col gap-3 items-start justify-between mb-4">
+                  <h3 className="text-lg font-semibold text-gray-800 ">
                     {product.name}
                   </h3>
                   <span

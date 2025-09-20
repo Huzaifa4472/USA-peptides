@@ -5,7 +5,7 @@ const heropd = require("../../assets/hero-product.webp");
 const HeroSection = () => {
   return (
     <div
-      className="w-full xl:h-[90vh] flex items-start justify-center py-10 bg-cover bg-center "
+      className="w-full xl:h-[70vh] flex items-start justify-center py-10 bg-cover bg-center "
       style={{ backgroundImage: `url(${herobg})` }}
     >
       <div className="md:w-[80%] w-[90%] flex lg:flex-row flex-col xl:gap-8 lg:gap-0 gap-4">
@@ -17,7 +17,10 @@ const HeroSection = () => {
             We are proud to carry the highest quality peptides and peptide
             blends in the research industry.
           </p>
-          <a href="/user/peptides" className="text-secondary bg-transparent border border-secondary hover:text-white hover:bg-secondary py-1.5 px-5 sm:text-[20px] text-[18px] rounded-2xl">
+          <a
+            href="/user/peptides"
+            className="text-secondary bg-transparent border border-secondary hover:text-white hover:bg-secondary py-1.5 px-5 sm:text-[20px] text-[18px] rounded-2xl"
+          >
             BUY PEPTIDES
           </a>
         </div>

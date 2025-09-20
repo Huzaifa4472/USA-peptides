@@ -128,14 +128,22 @@ const Sidebar = ({ collapsed }) => {
           >
             View Orders
           </NavLink>
-          <NavLink
+          {/* <NavLink
+            to="/admin/users/orders"
+            className={({ isActive }) =>
+              `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
+            }
+          >
+            Order History
+          </NavLink> */}
+          {/* <NavLink
             to="/admin/orders/reports"
             className={({ isActive }) =>
               `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
             }
           >
             Reports
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
 
@@ -164,14 +172,6 @@ const Sidebar = ({ collapsed }) => {
             }
           >
             View Users
-          </NavLink>
-          <NavLink
-            to="/admin/users/orders"
-            className={({ isActive }) =>
-              `${linkClasses} ${isActive ? "bg-secondary text-white" : ""}`
-            }
-          >
-            Order History
           </NavLink>
         </div>
       </div>
