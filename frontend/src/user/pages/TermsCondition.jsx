@@ -1,5 +1,5 @@
 import React from "react";
-import Background from "../../assets/right.PNG";
+import Background from "../../assets/right-updated.png";
 
 const TermsCondition = () => {
   return (
