@@ -41,6 +41,7 @@ const SetUpPassword = () => {
         `http://localhost:5000/api/v1/completeSignup/${token}/${email}`,
         { password }
       );
+
       toast.success(
         res.data?.message || "Password set successfully!",
         toastConfig
@@ -48,7 +49,7 @@ const SetUpPassword = () => {
       setPassword("");
       setConfirmPassword("");
       setTimeout(() => {
-        navigate("/my-accounts/login"); // Redirect to login page
+        navigate("/user/my-accounts"); // Redirect to login page
       }, 1500);
     } catch (err) {
       toast.error(

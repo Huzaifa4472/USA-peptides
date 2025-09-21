@@ -1,10 +1,10 @@
 import React from "react";
-import Background from "../../assets/about-bg.jpg";
+import Background from "../../assets/left.PNG";
 const AboutUs = () => {
   return (
     <div className="flex flex-col items-end gap-14 mb-20">
       <div
-        className="flex items-center justify-center w-full min-h-[300px] bg-cover bg-center "
+        className="flex items-center justify-center w-full min-h-[40vh] bg-cover bg-center "
         style={{ backgroundImage: `url(${Background})` }}
       >
         <h1 className=" md:mt-8 mt-4 sm:w-[80%] w-[90%] text-gradient md:text-[60px] text-[32px] font-[700]  leading-[70px]">
