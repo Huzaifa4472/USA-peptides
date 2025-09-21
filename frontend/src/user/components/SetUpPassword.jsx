@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
+import { completeSignup } from "../../service/service";
 
 const SetUpPassword = () => {
   const { token, email } = useParams(); // Get token & email from URL
@@ -37,10 +37,7 @@ const SetUpPassword = () => {
     }
 
     try {
-      const res = await axios.post(
-        `http://localhost:5000/api/v1/completeSignup/${token}/${email}`,
-        { password }
-      );
+      const res = completeSignup(email, token, password);
 
       toast.success(
         res.data?.message || "Password set successfully!",
