@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import Logo from "../../assets/logo.png";
 import { FaShoppingCart } from "react-icons/fa";
 import { useState, useEffect } from "react";
@@ -148,7 +149,14 @@ const Header = () => {
             {/* Icons */}
             <div className="text-2xl flex items-center sm:gap-6 gap-3">
               <NavLink to="/user/my-accounts">
-                <HiOutlineUser className="lg:!flex hidden" />
+                <HiOutlineUser onClick={() => {
+    const token = Cookies.get("refreshToken"); // read token from cookies
+    if (token) {
+      navigate("/user/my-accounts/dashboard");
+    } else {
+      navigate("/user/my-accounts");
+    }
+  }} className="lg:!flex hidden" />
               </NavLink>
               <div className="relative cursor-pointer" onClick={handleOpenCart}>
                 <FaShoppingCart />
