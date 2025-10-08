@@ -41,7 +41,7 @@ const userRoutes = [
   />,
   <Route
     key="setup-password"
-    path="my-accounts/setup-password/:token/:email"
+    path="my-accounts/setup-password"
     element={<SetUpPassword />}
   />,
   // <Route key="my-accounts/dashboard" path="my-accounts/dashboard" element={<UserDashboard />} />,
