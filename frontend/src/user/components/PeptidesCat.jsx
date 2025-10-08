@@ -16,7 +16,7 @@ const PeptidesCat = () => {
             className="h-72 "
             alt="Peptides Category"
           />
-          <a href="/user/peptides" className="text-[#9E6A2B] font-medium sm:text-lg text-[15px] border-2 border-[#9E6A2B] px-4 py-2 rounded-2xl hover:bg-[#9E6A2B] hover:text-white transition-all duration-500 ease-in-out">
+          <a href="/peptides" className="text-[#9E6A2B] font-medium sm:text-lg text-[15px] border-2 border-[#9E6A2B] px-4 py-2 rounded-2xl hover:bg-[#9E6A2B] hover:text-white transition-all duration-500 ease-in-out">
             PEPTIDES
           </a>
         </div>
@@ -26,7 +26,7 @@ const PeptidesCat = () => {
             
             alt="Blend Category"
           />
-          <a href="/user/peptides" className="text-[#D14D90] font-medium sm:text-lg text-[15px] border-2 border-[#D14D90] px-4 py-2 rounded-2xl hover:bg-[#D14D90] hover:text-white transition-all duration-500 ease-in-out">
+          <a href="/peptides" className="text-[#D14D90] font-medium sm:text-lg text-[15px] border-2 border-[#D14D90] px-4 py-2 rounded-2xl hover:bg-[#D14D90] hover:text-white transition-all duration-500 ease-in-out">
             PEPTIDE BLENDS
           </a>
         </div>

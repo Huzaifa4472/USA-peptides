@@ -18,7 +18,7 @@ const HeroSection = () => {
             blends in the research industry.
           </p>
           <a
-            href="/user/peptides"
+            href="/peptides"
             className="text-secondary bg-transparent border border-secondary hover:text-white hover:bg-secondary py-1.5 px-5 sm:text-[20px] text-[18px] rounded-2xl"
           >
             BUY PEPTIDES

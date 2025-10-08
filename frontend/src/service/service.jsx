@@ -17,7 +17,7 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response && error.response.status === 401) {
-      window.location.href = "/user/my-accounts"; // Redirect on 401
+      window.location.href = "/my-accounts"; // Redirect on 401
     }
     return Promise.reject(error);
   }

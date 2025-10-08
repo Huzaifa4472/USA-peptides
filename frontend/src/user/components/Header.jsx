@@ -97,14 +97,14 @@ const Header = () => {
     <>
       <div className="bg-black text-white sticky top-0 z-[999999]">
         <div className="md:w-[80%] w-[90%] mx-auto flex items-center justify-between md:py-3 py-3">
-          <NavLink to="/user">
+          <NavLink to="/home">
             <img src={Logo} alt="Logo" className="md:w-32 w-24" />
           </NavLink>
 
           <div className="flex items-center gap-10">
             <nav className="hidden lg:!flex items-center font-medium gap-6 ">
               <NavLink
-                to="/user"
+                to="/home"
                 end
                 className={({ isActive }) =>
                   isActive
@@ -115,7 +115,7 @@ const Header = () => {
                 HOME
               </NavLink>
               <NavLink
-                to="/user/peptides"
+                to="/peptides"
                 className={({ isActive }) =>
                   isActive
                     ? "text-primary text-[14px]"
@@ -125,7 +125,7 @@ const Header = () => {
                 PEPTIDES FOR SALE
               </NavLink>
               <NavLink
-                to="/user/about-us"
+                to="/about-us"
                 className={({ isActive }) =>
                   isActive
                     ? "text-primary text-[14px]"
@@ -135,7 +135,7 @@ const Header = () => {
                 ABOUT US
               </NavLink>
               <NavLink
-                to="/user/contact"
+                to="/contact"
                 className={({ isActive }) =>
                   isActive
                     ? "text-primary text-[14px]"
@@ -148,13 +148,13 @@ const Header = () => {
 
             {/* Icons */}
             <div className="text-2xl flex items-center sm:gap-6 gap-3">
-              <NavLink to="/user/my-accounts">
+              <NavLink to="/my-accounts">
                 <HiOutlineUser onClick={() => {
     const token = Cookies.get("refreshToken"); // read token from cookies
     if (token) {
-      navigate("/user/my-accounts/dashboard");
+      navigate("/my-accounts/dashboard");
     } else {
-      navigate("/user/my-accounts");
+      navigate("/my-accounts");
     }
   }} className="lg:!flex hidden" />
               </NavLink>
@@ -232,7 +232,7 @@ const Header = () => {
                         <p
                           className="text-primary text-sm mt-4 underline cursor-pointer"
                           onClick={() => {
-                            navigate(`/user/search?query=${searchQuery}`);
+                            navigate(`/search?query=${searchQuery}`);
                             setSearchOpen(false);
                           }}
                         >
@@ -258,7 +258,7 @@ const Header = () => {
         >
           <nav className="flex flex-col gap-4 py-4 font-medium ">
             <NavLink
-              to="/user"
+              to="/"
               end
               className={({ isActive }) =>
                 isActive
@@ -270,7 +270,7 @@ const Header = () => {
               HOME
             </NavLink>
             <NavLink
-              to="/user/peptides"
+              to="/peptides"
               className={({ isActive }) =>
                 isActive
                   ? "text-primary text-[14px]"
@@ -281,7 +281,7 @@ const Header = () => {
               PEPTIDES FOR SALE
             </NavLink>
             <NavLink
-              to="/user/about-us"
+              to="/about-us"
               className={({ isActive }) =>
                 isActive
                   ? "text-primary text-[14px]"
@@ -292,7 +292,7 @@ const Header = () => {
               ABOUT US
             </NavLink>
             <NavLink
-              to="/user/contact"
+              to="/contact"
               className={({ isActive }) =>
                 isActive
                   ? "text-primary text-[14px]"
@@ -304,7 +304,7 @@ const Header = () => {
             </NavLink>
             <div className="flex items-center justify-between">
               <NavLink
-                to="/user/my-accounts"
+                to="/my-accounts"
                 className={({ isActive }) =>
                   isActive
                     ? "text-primary text-[14px]"
@@ -315,7 +315,7 @@ const Header = () => {
                 MY ACCOUNT
               </NavLink>
               <NavLink
-                to="/user/my-accounts"
+                to="/my-accounts"
                 className={({ isActive }) =>
                   isActive ? "text-primary text-[14px]" : "hover:text-primary"
                 }

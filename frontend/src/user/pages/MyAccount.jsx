@@ -44,7 +44,7 @@ const MyAccount = () => {
       if (res.data.data.role === "Admin") {
         navigate("/admin/dashboard");
       } else {
-        navigate("/user");
+        navigate("/");
       }
     } catch (err) {
       errorToast(err.response?.data?.message || "Login failed");
@@ -168,7 +168,7 @@ const MyAccount = () => {
                 throughout this website, to manage access to your account, and
                 for other purposes described in our{" "}
                 <a
-                  href="/user/privacy-policy"
+                  href="/privacy-policy"
                   className="text-[#CC3882] font-medium"
                 >
                   privacy policy

@@ -24,20 +24,20 @@ const UserDashboard = () => {
     try {
       await logout();
       successToast("Logged out successfully ✅");
-      navigate("/user/my-accounts"); // redirect after logout
+      navigate("/my-accounts"); // redirect after logout
     } catch (err) {
       errorToast("Logout failed ❌");
       console.error("Logout error:", err);
     }
   };
   const menuItems = [
-    { name: "Dashboard", path: "/user/my-accounts/dashboard" },
-    { name: "Orders", path: "/user/my-accounts/dashboard/orders" },
-    { name: "Store Credits", path: "/user/my-accounts/dashboard/store-credits" },
-    { name: "Downloads", path: "/user/my-accounts/dashboard/downloads" },
-    { name: "Addresses", path: "/user/my-accounts/dashboard/addresses" },
-    { name: "Account Details", path: "/user/my-accounts/dashboard/account-details" },
-    { name: "Logout", path: "/user/my-accounts", action: handleLogout },
+    { name: "Dashboard", path: "/my-accounts/dashboard" },
+    { name: "Orders", path: "/my-accounts/dashboard/orders" },
+    { name: "Store Credits", path: "/my-accounts/dashboard/store-credits" },
+    { name: "Downloads", path: "/my-accounts/dashboard/downloads" },
+    { name: "Addresses", path: "/my-accounts/dashboard/addresses" },
+    { name: "Account Details", path: "/my-accounts/dashboard/account-details" },
+    { name: "Logout", path: "/my-accounts", action: handleLogout },
   ];
 
   return (

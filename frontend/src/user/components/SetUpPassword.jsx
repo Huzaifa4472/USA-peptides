@@ -29,7 +29,7 @@ const SetUpPassword = () => {
       setPassword("");
       setConfirmPassword("");
       setTimeout(() => {
-        navigate("/user/my-accounts"); // Redirect to login page
+        navigate("/my-accounts"); // Redirect to login page
       }, 1500);
     } catch (err) {
       errorToast("Failed to set password. Please try again.");
