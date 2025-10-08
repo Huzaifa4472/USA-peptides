@@ -1,5 +1,5 @@
 import React from "react";
-const catbg = require("../../assets/blend&peptide.webp");
+const catbg = require("../../assets/blend&peptidebg.png");
 const peptidesCat = require("../../assets/peptides-cat.png");
 const blendCat = require("../../assets/blend-cat.png");
 
